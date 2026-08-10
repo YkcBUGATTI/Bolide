@@ -1208,3 +1208,268 @@ button { font-family: inherit; }
 
 /* 章节标题微调：视频区前的 section 少用重复卡，节奏变化 */
 .chapter--tight { padding-top: clamp(2.5rem, 5vh, 4rem); }
+
+/* ============================================================
+   结尾区 — 参照 tourbillon.hypercar.site
+   portal（更多传奇） / contact（BILIBILI·YOUTUBE）/ top / disclaimer
+   ============================================================ */
+.footer {
+  border-top: 1px solid var(--line-soft);
+  padding: clamp(3rem, 7vh, 4.5rem) clamp(1.5rem, 5vw, 4rem) 3rem;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.footer__portal {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(3.5rem, 9vh, 5.5rem) 24px clamp(3.5rem, 9vh, 5.5rem);
+  margin-bottom: clamp(2.5rem, 6vh, 4rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse 90% 70% at 50% 0%, rgba(77, 124, 254, 0.08), transparent 72%);
+}
+.footer__portal::before {
+  content: 'HYPERCAR';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(64px, 13vw, 180px);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  user-select: none;
+}
+.footer__portal-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__portal-kicker {
+  font-size: 12px;
+  letter-spacing: 0.42em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.footer__portal-title {
+  font-size: clamp(34px, 5.5vw, 56px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.footer__portal-dot { color: var(--accent); }
+.footer__portal-sub {
+  font-size: 14px;
+  letter-spacing: 0.22em;
+  color: var(--ink-dim);
+  margin-top: 14px;
+  margin-bottom: 36px;
+}
+.footer__portal-btn {
+  font-size: 13px;
+  letter-spacing: 0.26em;
+  color: var(--ink);
+  padding: 15px 36px;
+  border: 1px solid var(--line);
+  transition: border-color 0.3s, color 0.3s, background 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+.footer__portal-btn:hover {
+  border-color: var(--accent);
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 0 36px rgba(77, 124, 254, 0.35);
+}
+
+.footer__contact {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+.footer__contact-label {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--ink-faint);
+  margin-right: 6px;
+}
+.footer__contact-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-left: 6px; }
+.footer__contact-btns .sbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 20px;
+  min-width: 236px;
+  justify-content: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition: transform 0.35s ease, border-color 0.35s, background 0.35s, box-shadow 0.45s;
+}
+.footer__contact-btns .sbtn svg { flex: none; width: 22px; height: 22px; opacity: 0.9; transition: color 0.3s; }
+.footer__contact-btns .sbtn__txt { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; flex: 1; min-width: 0; }
+.footer__contact-btns .sbtn__txt b { font-size: 13px; letter-spacing: 0.24em; font-weight: 700; line-height: 1.2; }
+.footer__contact-btns .sbtn__txt small { font-size: 10px; letter-spacing: 0.08em; color: var(--ink-faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.footer__contact-btns .sbtn__arrow { font-style: normal; font-size: 15px; opacity: 0; transform: translateX(-7px); transition: opacity 0.3s, transform 0.3s; }
+.footer__contact-btns .sbtn:hover { transform: translateY(-3px); }
+.footer__contact-btns .sbtn:hover .sbtn__arrow { opacity: 1; transform: none; }
+.footer__contact-btns .sbtn--bili:hover { border-color: #00a1d6; background: rgba(0, 161, 214, 0.14); color: #fff; box-shadow: 0 14px 34px -14px rgba(0, 161, 214, 0.5); }
+.footer__contact-btns .sbtn--bili:hover svg { color: #00a1d6; }
+.footer__contact-btns .sbtn--bili:hover .sbtn__txt small { color: #7fd4ef; }
+.footer__contact-btns .sbtn--yt:hover { border-color: #ff0033; background: rgba(255, 0, 51, 0.13); color: #fff; box-shadow: 0 14px 34px -14px rgba(255, 0, 51, 0.5); }
+.footer__contact-btns .sbtn--yt:hover svg { color: #ff4d66; }
+.footer__contact-btns .sbtn--yt:hover .sbtn__txt small { color: #ff9aa8; }
+
+.footer__top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.footer__brand { font-size: 13px; letter-spacing: 0.3em; color: var(--ink-dim); }
+.footer__links { display: flex; gap: 26px; }
+.footer__links a {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+.footer__links a:hover { border-color: var(--accent); color: #fff; }
+
+.footer__disclaimer p {
+  color: var(--ink-dim);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 860px;
+}
+.footer__disclaimer p.mono {
+  margin-top: 14px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.footer__disclaimer p.mono a { color: var(--ink-dim); border-bottom: 1px solid var(--line); transition: color 0.3s; }
+.footer__disclaimer p.mono a:hover { color: var(--ink); }
+
+/* 移动端 */
+@media (max-width: 640px) {
+  .footer__top { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .footer__links { flex-wrap: wrap; gap: 16px; }
+  .footer__contact-btns { flex-direction: column; width: 100%; margin-left: 0; }
+  .footer__contact-btns .sbtn { width: 100%; min-width: 0; }
+  .footer__contact { align-items: flex-start; flex-direction: column; }
+}
+
+/* ============================================================
+   v11 视觉精修 — 图说层级 / 章节仪式感 / 呼吸感
+   ============================================================ */
+
+/* 图说：加大、层级分明（历史诉求：图说字太小） */
+.figure__cap {
+  font-size: .95rem;
+}
+.figure__cap .en {
+  color: var(--ink-dim);
+  font-size: 1.02em;
+}
+.figure__cap .zh {
+  color: var(--ink-faint);
+  font-size: .92em;
+}
+.figure__cap .no {
+  font-size: .7rem;
+}
+
+/* 章节标题区：水印大字 + 更从容的呼吸 */
+.chapter-break {
+  position: relative;
+  overflow: hidden;
+}
+.chapter-break::after {
+  content: attr(data-watermark);
+  position: absolute;
+  right: clamp(1rem, 4vw, 4rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 16vw, 14rem);
+  line-height: 1;
+  letter-spacing: .06em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(244, 242, 238, .05);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.chapter-break__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* hero：数据条数字更大、标题更震撼 */
+.hero__title {
+  font-size: clamp(5.5rem, 22vw, 19rem);
+}
+.hero__data b {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+}
+.hero__data > div {
+  gap: .3rem;
+}
+.hero__data span {
+  font-size: .72rem;
+  letter-spacing: .34em;
+}
+
+/* 引用块：引号质感 + 更高级的留白 */
+.quote blockquote {
+  position: relative;
+  padding: 0 1rem;
+}
+.quote blockquote::before {
+  content: '\201C';
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.4em;
+  line-height: .6;
+  color: var(--accent);
+  opacity: .55;
+  margin-bottom: .2em;
+}
+
+/* 章节间距呼吸：figrow / figure 之间 */
+.figrow {
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.figure {
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+.figure--full {
+  margin-bottom: clamp(3.5rem, 7vh, 5.5rem);
+}
+
+/* 数据卡 hover 微动效 */
+.stat, .hcard, .fact, .point {
+  transition: transform .4s var(--ease), border-color .4s, background .4s;
+}
+.stat:hover, .hcard:hover, .fact:hover, .point:hover {
+  transform: translateY(-3px);
+  border-color: rgba(244, 242, 238, .28);
+}
