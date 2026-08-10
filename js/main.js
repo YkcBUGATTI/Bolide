@@ -36,10 +36,12 @@
 
   /* 右缘滚动进度 + 当前档案页码 */
   var docs = Array.prototype.slice.call(document.querySelectorAll('.doc, .hero'));
-  var docMap = []; /* [top, bottom, label] */
-  var docLabels = ['00', '01', '02', '03', '04', '05', '06', '07'];
-  docs.forEach(function (el, i) {
-    var label = el.id === 'hero' ? '00' : (el.id ? el.id.replace('doc', '') : '—');
+  var docMap = []; /* [el, label] */
+  docs.forEach(function (el) {
+    var label = '—';
+    if (el.id === 'hero') label = '00';
+    else if (/^doc\d+$/.test(el.id)) label = el.id.replace('doc', '');
+    else if (el.id === 'archive') label = 'AP';
     docMap.push({ el: el, label: label });
   });
 
