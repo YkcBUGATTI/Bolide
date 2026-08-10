@@ -1473,3 +1473,187 @@ button { font-family: inherit; }
   transform: translateY(-3px);
   border-color: rgba(244, 242, 238, .28);
 }
+
+/* ============================================================
+   v12 排版规整 — figrow 图片等高 / 第六章节奏
+   ============================================================ */
+
+/* figrow 双图等高裁剪（横竖图混排时对齐） */
+.figrow .figure__media img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.figrow .figure__media {
+  background: #0e0e11;
+}
+
+/* timeline：保留两列 grid，加左侧时间线竖线与节点 */
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: clamp(1.6rem, 4vw, 2.6rem);
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--line), rgba(244,242,238,.05));
+  pointer-events: none;
+}
+.tl-item {
+  position: relative;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: calc(clamp(1.6rem, 4vw, 2.6rem) - 5px);
+  top: 1.9rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  transition: box-shadow .3s;
+  z-index: 1;
+}
+.tl-item:hover::before {
+  box-shadow: 0 0 0 5px rgba(77, 124, 254, .18);
+}
+
+/* webcard 组：相邻两张时拉开距离 */
+.webcard + .webcard {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+}
+.webcard + .figrow,
+.figrow + .webcard {
+  margin-top: clamp(2.5rem, 6vh, 4rem);
+}
+
+/* chapter-video 与 webcard 相邻的节奏 */
+.chapter-video + .webcard {
+  margin-top: clamp(3rem, 7vh, 5rem);
+}
+
+/* ============================================================
+   v13 全面美化 — 质感细节
+   ============================================================ */
+
+/* 自定义滚动条（细、低调） */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #0b0b0d; }
+::-webkit-scrollbar-thumb {
+  background: #232329;
+  border-radius: 5px;
+  border: 2px solid #0b0b0d;
+}
+::-webkit-scrollbar-thumb:hover { background: #33333c; }
+
+/* hero：暗角 + 数据条底部光带 */
+.hero__veil::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, rgba(11,11,13,.55) 100%);
+  pointer-events: none;
+}
+.hero__data {
+  position: relative;
+}
+.hero__data::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1.2rem;
+  height: 1px;
+  background: linear-gradient(to right, var(--accent), transparent 60%);
+  opacity: .5;
+}
+
+/* nav：品牌 ✕ 符号发光 */
+.nav__brand span {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.4em; height: 1.4em;
+  margin-right: .55em;
+  font-size: .72em; line-height: 1;
+  color: var(--accent);
+  border: 1px solid rgba(77, 124, 254, .45);
+  transition: color .4s, border-color .4s, box-shadow .4s, background .4s;
+}
+.nav__brand:hover span {
+  color: #fff;
+  border-color: var(--accent);
+  background: rgba(77, 124, 254, .14);
+  box-shadow: 0 0 16px rgba(77, 124, 254, .45);
+}
+
+/* specs tabs：active 底部线 + 悬浮态 */
+.specs-tabs__btn {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: .72rem; letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: .9rem 1.2rem;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color .3s, border-color .3s;
+}
+.specs-tabs__btn:hover { color: var(--ink-dim); }
+.specs-tabs__btn.is-on {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* facts：卡片化 + 顶部细线 */
+.fact {
+  border-top: 1px solid var(--line);
+  padding-top: 1.4rem;
+  position: relative;
+}
+.fact::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0;
+  width: 2.6rem; height: 1px;
+  background: var(--accent);
+  transition: width .5s var(--ease);
+}
+.fact:hover::before { width: 100%; }
+
+/* points：编号微光 */
+.point__no {
+  font-family: var(--font-mono);
+  font-size: .62rem; letter-spacing: .3em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+/* chapter-video：顶部渐变过渡（与上图衔接） */
+.chapter-video {
+  position: relative;
+}
+.chapter-video::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(3rem, 8vh, 6rem);
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* figure 图说：编号与文字分隔更清晰 */
+.figure__cap .no::after {
+  content: '';
+  display: inline-block;
+  width: 2rem; height: 1px;
+  background: var(--accent);
+  opacity: .6;
+  vertical-align: middle;
+  margin-left: .7rem;
+}
+
+/* 键盘可达性 */
+a:focus-visible, button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 3px;
+}
