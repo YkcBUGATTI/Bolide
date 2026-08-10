@@ -197,12 +197,15 @@ button { font-family: inherit; }
   background: rgba(5, 5, 7, 0.97);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  display: grid;
+  display: none;
   place-items: center;
   opacity: 0;
   transition: opacity 0.4s var(--ease);
 }
-.menu-overlay.is-open { opacity: 1; }
+.menu-overlay.is-open {
+  display: grid;
+  opacity: 1;
+}
 .menu-overlay__nav {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 220px));
@@ -287,7 +290,7 @@ button { font-family: inherit; }
   width: 100%;
 }
 .hero__tag {
-  font-family: var(--font-mono); font-size: font-size: .82rem;
+  font-family: var(--font-mono); font-size: .82rem;
   letter-spacing: .42em; text-transform: uppercase;
   color: var(--ink-dim);
   margin-bottom: 1.6rem;
@@ -322,7 +325,7 @@ button { font-family: inherit; }
 }
 .hero__data b em { font-style: normal; color: var(--accent); }
 .hero__data span {
-  font-family: var(--font-mono); font-size: font-size: .78rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .3em; color: var(--ink-faint);
   text-transform: uppercase;
 }
@@ -438,13 +441,13 @@ button { font-family: inherit; }
 .figure__cap {
   display: flex; align-items: baseline; gap: 1rem;
   margin-top: 1rem;
-  font-size: font-size: 1rem; line-height: 1.7;
+  font-size: 1rem; line-height: 1.7;
   color: var(--ink-faint);
 }
 .figure__cap .en { color: var(--ink-dim); }
 .figure__cap .zh { color: var(--ink-faint); }
 .figure__cap .no {
-  font-family: var(--font-mono); font-size: font-size: .78rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .3em; color: var(--accent);
   flex-shrink: 0;
 }
@@ -662,7 +665,7 @@ button { font-family: inherit; }
 }
 .tl-item:first-child { border-top: 1px solid var(--line-soft); }
 .tl-item__date {
-  font-family: var(--font-mono); font-size: font-size: .8rem;
+  font-family: var(--font-mono); font-size: .8rem;
   letter-spacing: .28em; color: var(--accent);
   text-transform: uppercase;
   padding-top: .4rem;
@@ -852,7 +855,7 @@ button { font-family: inherit; }
   display: block;
   margin-top: 1.2rem;
   font-family: var(--font-mono);
-  font-size: font-size: .78rem;
+  font-size: .78rem;
   letter-spacing: .38em;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -1087,7 +1090,7 @@ button { font-family: inherit; }
 .sec-label {
   display: flex; align-items: center; gap: 1rem;
   font-family: var(--font-mono);
-  font-size: font-size: .78rem;
+  font-size: .78rem;
   letter-spacing: .4em;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -1512,7 +1515,7 @@ button { font-family: inherit; }
 
 /* 图说：加大、层级分明（历史诉求：图说字太小） */
 .figure__cap {
-  font-size: font-size: 1rem;
+  font-size: 1rem;
 }
 .figure__cap .en {
   color: var(--ink-dim);
@@ -1523,7 +1526,7 @@ button { font-family: inherit; }
   font-size: .92em;
 }
 .figure__cap .no {
-  font-size: font-size: .8rem;
+  font-size: .8rem;
 }
 
 /* 章节标题区：水印大字 + 更从容的呼吸 */
@@ -1702,7 +1705,7 @@ button { font-family: inherit; }
 .specs-tabs__btn {
   background: none; border: none; cursor: pointer;
   font-family: var(--font-mono);
-  font-size: font-size: .8rem; letter-spacing: .24em;
+  font-size: .8rem; letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--ink-faint);
   padding: .9rem 1.2rem;
@@ -1738,7 +1741,7 @@ button { font-family: inherit; }
 /* points：编号微光 */
 .point__no {
   font-family: var(--font-mono);
-  font-size: font-size: .74rem; letter-spacing: .3em;
+  font-size: .74rem; letter-spacing: .3em;
   color: var(--ink-faint);
   text-transform: uppercase;
 }
