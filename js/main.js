@@ -4,41 +4,102 @@
 
   var nav = document.getElementById('nav');
   var menuBtn = document.getElementById('menuBtn');
-  var docmenu = document.getElementById('docmenu');
-  var archiveBox = document.getElementById('archiveBox');
-  var archiveHead = document.getElementById('archiveHead');
-  var archiveToggle = document.getElementById('archiveToggle');
+  var menuOverlay = document.getElementById('menuOverlay');
+  var menuNav = document.querySelector('.menu-overlay__nav');
+  var navNow = document.getElementById('navNow');
+  var navBar = document.getElementById('navBar');
+  var sg = document.querySelector('.scroll-gauge');
+  var sgBar = sg ? sg.querySelector('.sg__bar') : null;
+  var sgNum = sg ? sg.querySelector('.sg__num') : null;
+  var SG_LEN = 119.4;
+  var isEN = (document.documentElement.lang || '').toLowerCase() === 'en';
 
-  /* 导航滚动态：开屏隐藏，滚过 hero 后直接出现（无淡化） */
-  var onScroll = function () {
-    if (nav) nav.classList.toggle('is-solid', window.scrollY > window.innerHeight * 0.8);
+  /* 章节名映射（tourbillon 同款结构，适配 bolide 7 章） */
+  var sectionNames = isEN ? {
+    ch01: 'Meteor', ch02: 'Design', ch03: 'Engineering',
+    ch04: 'Performance', ch05: 'Cockpit', ch06: 'Track Chronicle', ch07: 'Legacy'
+  } : {
+    ch01: '火流星', ch02: '设计', ch03: '工程',
+    ch04: '性能', ch05: '座舱', ch06: '赛道纪事', ch07: '传承'
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  /* 目录浮层 */
-  if (menuBtn && docmenu) {
+  /* 构建章节菜单（编号从 01 开始） */
+  var navSections = Array.prototype.slice.call(document.querySelectorAll('.chapter-break[id]'));
+  var navItems = [];
+  navSections.forEach(function (s, i) {
+    var name = sectionNames[s.id] || s.id;
+    var idx = String(i + 1).padStart(2, '0');
+    if (menuNav) {
+      var a = document.createElement('a');
+      a.href = '#' + s.id;
+      a.innerHTML = '<span class="idx">' + idx + '</span>' + name;
+      menuNav.appendChild(a);
+      navItems.push(a);
+    }
+  });
+
+  /* 章节高亮：当前章节 → navNow 文字 */
+  var sectionIO = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var id = en.target.id;
+      navItems.forEach(function (a) {
+        a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+      });
+      var brand = document.querySelector('.nav__brand');
+      var langWrap = document.querySelector('.nav__lang');
+      if (navNow) {
+        if (id === 'hero') {
+          navNow.style.opacity = '0';
+          navNow.style.pointerEvents = 'none';
+          if (brand) brand.classList.add('is-hidden');
+          if (langWrap) langWrap.classList.add('is-hidden');
+        } else {
+          navNow.style.opacity = '1';
+          navNow.style.pointerEvents = 'auto';
+          if (brand) brand.classList.remove('is-hidden');
+          if (langWrap) langWrap.classList.remove('is-hidden');
+          var idx = navSections.indexOf(en.target) + 1;
+          navNow.innerHTML = '<b>' + String(idx).padStart(2, '0') + '</b> · ' + (sectionNames[id] || id);
+        }
+      }
+    });
+  }, { rootMargin: '-35% 0px -60% 0px' }) : null;
+
+  var allSections = [document.getElementById('hero')].concat(navSections);
+  allSections.forEach(function (s) { if (s && sectionIO) sectionIO.observe(s); });
+
+  /* 菜单开关（tourbillon 同款） */
+  if (menuBtn && menuOverlay) {
     menuBtn.addEventListener('click', function () {
-      var open = docmenu.classList.toggle('is-open');
+      var open = menuOverlay.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    docmenu.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A' || e.target === docmenu) {
-        docmenu.classList.remove('is-open');
+    menuOverlay.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' || e.target === menuOverlay) {
+        menuOverlay.classList.remove('is-open');
         menuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       }
     });
   }
 
-  /* 档案库折叠 */
-  if (archiveHead && archiveBox) {
-    archiveHead.addEventListener('click', function () {
-      var open = archiveBox.classList.toggle('is-open');
-      if (archiveToggle) archiveToggle.textContent = open ? '收起 ▲' : '展开 ▼';
-    });
-  }
+  /* 滚动：nav 底色 + 进度条 + 表盘 */
+  var onScroll = function () {
+    var y = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var p = docH > 0 ? y / docH : 0;
+    if (nav) nav.classList.toggle('is-solid', y > 40);
+    if (navBar) navBar.style.width = (p * 100).toFixed(1) + '%';
+    if (sg) {
+      sg.classList.toggle('is-on', y > window.innerHeight * 0.7);
+      if (sgBar) sgBar.style.strokeDashoffset = String(SG_LEN * (1 - p));
+      if (sgNum) sgNum.textContent = String(Math.round(p * 100)).padStart(2, '0');
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
   /* 数字滚动计数 */
   var countUp = function (n) {

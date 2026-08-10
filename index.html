@@ -32,24 +32,27 @@
 <body>
 
 <header class="nav" id="nav">
-  <a class="nav__brand" href="#hero">BOLIDE</a>
-  <div class="nav__right">
-    <a class="nav__lang" href="en.html" onclick="localStorage.setItem('bolide-lang','en')">EN</a>
-    <button class="nav__menu" id="menuBtn" aria-expanded="false">目录</button>
+  <div class="nav__inner">
+    <span class="nav__now mono" id="navNow">01 · 火流星</span>
+    <a class="nav__brand is-hidden" href="#hero">
+      <svg viewBox="0 0 2468.89 566.93" width="86" height="20" fill="currentColor" aria-label="BUGATTI"><path d="M272.56 273.34c28.81-26.48 45.95-63.86 45.95-107.47 0-89.56-65.41-154.97-155.75-154.97H0v545.13h174.44c92.67 0 160.42-66.97 160.42-159.64 0-52.18-23.36-95.79-62.3-123.04ZM87.22 95.01h72.42c42.83 0 71.65 28.81 71.65 70.87s-28.81 70.87-71.65 70.87H87.22V95.01Zm84.1 376.91h-84.1V320.84h84.1c45.17 0 76.32 30.37 76.32 75.54s-31.15 75.54-76.32 75.54ZM648.69 406.51c0 44.39-31.93 76.32-76.32 76.32s-76.32-31.93-76.32-76.32V10.9h-87.22v389.38c0 96.56 68.53 166.65 163.54 166.65s163.54-70.09 163.54-166.65V10.9h-87.22v395.61ZM993.03 0c-95.01 0-163.54 70.09-163.54 166.65v233.62c0 96.56 68.53 166.65 163.54 166.65s163.54-70.09 163.54-166.65V241.41H993.03v84.11h76.32v80.99c0 44.39-31.93 76.32-76.32 76.32s-76.32-31.93-76.32-76.32V160.42c0-44.39 31.93-76.32 76.32-76.32s76.32 31.93 76.32 76.32v14.02h87.22v-7.79C1156.57 70.09 1088.04 0 993.03 0ZM1344.1 10.9l-125.38 545.12h86.44L1330.08 447h147.96l24.92 109.02h86.44L1464.03 10.9H1344.1Zm5.45 351.99 54.51-239.08 54.51 239.08h-109.02ZM1604.2 95.01h119.93l.78 461.02h85.66l.78-461.02h119.92V10.9H1604.2v84.11zM1976.59 95.01h119.93l.78 461.02h85.66l.78-461.02h119.92V10.9h-327.07v84.11zM2381.67 10.9h87.22v545.12h-87.22z"></path></svg>
+      <span class="nav__brand-sub">BOLIDE</span>
+    </a>
+    <span class="nav__lang">
+      <a class="lang-btn mono" href="en.html">EN</a>
+      <button class="nav__menu-btn mono" id="menuBtn" aria-label="章节菜单" aria-expanded="false"><span class="nav__menu-icon"><i></i><i></i><i></i></span></button>
+    </span>
   </div>
+  <div class="nav__progress" aria-hidden="true"><i id="navBar"></i></div>
 </header>
 
-<div class="docmenu" id="docmenu">
-  <nav class="docmenu__list" aria-label="目录">
-    <a href="#hero"><i>00</i>封面</a>
-    <a href="#ch01"><i>01</i>火流星</a>
-    <a href="#ch02"><i>02</i>设计</a>
-    <a href="#ch03"><i>03</i>工程</a>
-    <a href="#ch04"><i>04</i>性能</a>
-    <a href="#ch05"><i>05</i>座舱</a>
-    <a href="#ch06"><i>06</i>赛道纪事</a>
-    <a href="#ch07"><i>07</i>传承</a>
-  </nav>
+<div class="menu-overlay" id="menuOverlay" hidden>
+  <nav class="menu-overlay__nav" aria-label="章节菜单"></nav>
+</div>
+
+<div class="scroll-gauge" aria-hidden="true">
+  <svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle class="sg__bar" cx="22" cy="22" r="19"/></svg>
+  <span class="sg__num mono">00</span>
 </div>
 
 <main>
@@ -77,16 +80,7 @@
 </section>
 
 <!-- ============ 限量声明 ============ -->
-<section class="limited reveal">
-  <div class="limited__media">
-    <img src="assets/doc02-40units.webp" alt="Bolide 限量 40 台" loading="lazy" width="1800" height="1200">
-  </div>
-  <div class="limited__veil"></div>
-  <div class="limited__inner">
-    <span class="limited__num"><em>40</em> UNITS</span>
-    
-  </div>
-</section>
+
 
 <!-- ============ 01 火流星 ============ -->
 <div class="chapter-break reveal" id="ch01" data-watermark="01">
