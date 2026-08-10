@@ -1,4 +1,4 @@
-/* BOLIDE — 火流星档案 · 交互脚本 */
+/* BOLIDE — 火流星档案 · v3 交互 */
 (function () {
   'use strict';
 
@@ -11,7 +11,7 @@
   var archiveHead = document.getElementById('archiveHead');
   var archiveToggle = document.getElementById('archiveToggle');
 
-  /* 导航：滚动后加深底色 */
+  /* 导航 */
   var onScroll = function () {
     if (nav) nav.classList.toggle('is-solid', window.scrollY > 40);
   };
@@ -34,9 +34,9 @@
     });
   }
 
-  /* 右缘滚动进度 + 当前档案页码 */
+  /* 滚动进度 + 档案页码 */
   var docs = Array.prototype.slice.call(document.querySelectorAll('.doc, .hero'));
-  var docMap = []; /* [el, label] */
+  var docMap = [];
   docs.forEach(function (el) {
     var label = '—';
     if (el.id === 'hero') label = '00';
@@ -44,7 +44,6 @@
     else if (el.id === 'archive') label = 'AP';
     docMap.push({ el: el, label: label });
   });
-
   var onProgress = function () {
     var h = document.documentElement;
     var max = h.scrollHeight - h.clientHeight;
@@ -71,23 +70,43 @@
     });
   }
 
-  /* 入场渐显 */
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('is-in');
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    reveals.forEach(function (el) { io.observe(el); });
+  /* 视口触发：reveal + 性能条 + 对比尺 */
+  var runAnim = function (el) {
+    el.classList.add('is-run');
+    el.classList.add('is-in');
+  };
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        runAnim(en.target);
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -5% 0px' }) : null;
+
+  if (io) {
+    document.querySelectorAll('.reveal, .perf__fill, .perf__mark, .scale2__fill').forEach(function (el) { io.observe(el); });
   } else {
-    reveals.forEach(function (el) { el.classList.add('is-in'); });
+    document.querySelectorAll('.reveal, .perf__fill, .perf__mark, .scale2__fill').forEach(function (el) { runAnim(el); });
   }
 
-  /* 图片资源解码完成后增强（可选，保持克制） */
+  /* W16 热点探索 */
+  var hotspots = document.querySelectorAll('.hotspot');
+  var isTouch = window.matchMedia('(hover: none)').matches;
+  hotspots.forEach(function (hs, i) {
+    if (!isTouch) {
+      hs.addEventListener('mouseenter', function () { hs.classList.add('is-active'); });
+      hs.addEventListener('mouseleave', function () { hs.classList.remove('is-active'); });
+    } else {
+      hs.addEventListener('click', function () {
+        var was = hs.classList.contains('is-active');
+        hotspots.forEach(function (h) { h.classList.remove('is-active'); });
+        if (!was) hs.classList.add('is-active');
+      });
+    }
+  });
+
+  /* PWA */
   if (window.location.protocol === 'https:' && 'serviceWorker' in navigator) {
     window.addEventListener('load', function () {
       navigator.serviceWorker.register('sw.js').catch(function () {});
