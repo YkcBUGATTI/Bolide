@@ -29,17 +29,18 @@
 
 /* ---------- 变量 ---------- */
 :root {
-  --bg:        #0b0b0d;
-  --bg-soft:   #111114;
-  --ink:       #f4f2ee;
-  --ink-dim:   #b9b5ad;
-  --ink-faint: #7d7a73;
-  --accent:    #4d7cfe;          /* 克制使用：关键数字 / hover */
-  --line:      rgba(244, 242, 238, 0.14);
-  --line-soft: rgba(244, 242, 238, 0.07);
-  --font-display: 'Bugatti Display', 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-  --font-text:    'Bugatti Text', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  --font-mono:    'Bugatti Mono', 'Consolas', 'Courier New', monospace;
+  --bg:        #050507;
+  --bg-soft:   #0a0b0f;
+  --panel:     #12141c;
+  --ink:       #f2f2f5;
+  --ink-dim:   #a9a9b3;
+  --ink-faint: #7d7d88;
+  --accent:    #004bfa;          /* 布加迪蓝，同 tourbillon */
+  --line:      rgba(255, 255, 255, 0.12);
+  --line-soft: rgba(255, 255, 255, 0.07);
+  --font-display: 'BUGATTI Display', 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  --font-text:    'BUGATTI Text', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --font-mono:    'BUGATTI Mono', 'Consolas', 'Courier New', monospace;
   --w-doc: 1280px;
   --w-prose: 660px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -52,7 +53,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-text);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -93,16 +94,15 @@ button { font-family: inherit; }
   color: var(--ink);
   text-transform: uppercase;
 }
-.nav__brand span { color: var(--accent); font-size: .72em; vertical-align: .28em; margin-right: .55em; letter-spacing: 0; }
 .nav__right { display: flex; align-items: center; gap: 2.2rem; }
 .nav__lang {
-  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .22em;
+  font-family: var(--font-mono); font-size: .8rem; letter-spacing: .22em;
   color: var(--ink-dim); transition: color .3s;
 }
 .nav__lang:hover { color: var(--ink); }
 .nav__menu {
   background: none; border: 0; cursor: pointer;
-  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .22em;
+  font-family: var(--font-mono); font-size: .8rem; letter-spacing: .22em;
   color: var(--ink-dim); text-transform: uppercase; transition: color .3s;
 }
 .nav__menu:hover { color: var(--ink); }
@@ -154,7 +154,7 @@ button { font-family: inherit; }
   width: 100%;
 }
 .hero__tag {
-  font-family: var(--font-mono); font-size: .72rem;
+  font-family: var(--font-mono); font-size: font-size: .82rem;
   letter-spacing: .42em; text-transform: uppercase;
   color: var(--ink-dim);
   margin-bottom: 1.6rem;
@@ -189,7 +189,7 @@ button { font-family: inherit; }
 }
 .hero__data b em { font-style: normal; color: var(--accent); }
 .hero__data span {
-  font-family: var(--font-mono); font-size: .68rem;
+  font-family: var(--font-mono); font-size: font-size: .78rem;
   letter-spacing: .3em; color: var(--ink-faint);
   text-transform: uppercase;
 }
@@ -197,7 +197,7 @@ button { font-family: inherit; }
 /* 滚动提示 */
 .hero__scroll {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  font-family: var(--font-mono); font-size: .62rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .5em; color: var(--ink-faint);
   display: flex; flex-direction: column; align-items: center; gap: .7rem;
 }
@@ -226,7 +226,7 @@ button { font-family: inherit; }
 .ch-head { margin-bottom: clamp(2.8rem, 7vh, 5rem); }
 .ch-head__tag {
   display: flex; align-items: center; gap: 1.1rem;
-  font-family: var(--font-mono); font-size: .7rem;
+  font-family: var(--font-mono); font-size: .82rem;
   letter-spacing: .4em; text-transform: uppercase;
   color: var(--ink-faint);
   margin-bottom: 1.4rem;
@@ -305,13 +305,13 @@ button { font-family: inherit; }
 .figure__cap {
   display: flex; align-items: baseline; gap: 1rem;
   margin-top: 1rem;
-  font-size: .86rem; line-height: 1.7;
+  font-size: font-size: 1rem; line-height: 1.7;
   color: var(--ink-faint);
 }
 .figure__cap .en { color: var(--ink-dim); }
 .figure__cap .zh { color: var(--ink-faint); }
 .figure__cap .no {
-  font-family: var(--font-mono); font-size: .66rem;
+  font-family: var(--font-mono); font-size: font-size: .78rem;
   letter-spacing: .3em; color: var(--accent);
   flex-shrink: 0;
 }
@@ -342,7 +342,7 @@ button { font-family: inherit; }
 .bignums b em { font-style: normal; color: var(--accent); }
 .bignums span {
   display: block;
-  font-family: var(--font-mono); font-size: .7rem;
+  font-family: var(--font-mono); font-size: .82rem;
   letter-spacing: .3em; color: var(--ink-faint);
   text-transform: uppercase;
   margin-top: .8rem;
@@ -406,7 +406,7 @@ button { font-family: inherit; }
   transition: opacity .4s, transform .4s var(--ease);
 }
 .perf__bar.is-run .perf__mark { opacity: 1; transform: scale(1); transition-delay: 1.4s; }
-.perf__scale { display: flex; justify-content: space-between; margin-top: .45rem; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .2em; color: var(--ink-faint); }
+.perf__scale { display: flex; justify-content: space-between; margin-top: .45rem; font-family: var(--font-mono); font-size: .74rem; letter-spacing: .2em; color: var(--ink-faint); }
 
 /* ---------- 对比尺（自重 vs 下压力） ---------- */
 .scale2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); margin: clamp(3.5rem, 8vh, 6rem) 0; }
@@ -425,7 +425,7 @@ button { font-family: inherit; }
 .scale2__col.is-run .scale2__fill { width: var(--w); }
 .scale2__fill--self { background: var(--ink-faint); }
 .scale2__fill--down { background: var(--accent); }
-.scale2__note { display: block; margin-top: 1rem; font-size: .92rem; color: var(--ink-dim); }
+.scale2__note { display: block; margin-top: 1rem; font-size: 1rem; color: var(--ink-dim); }
 .scale2__note b { color: var(--ink); }
 
 /* ---------- 热点探索 ---------- */
@@ -434,7 +434,7 @@ button { font-family: inherit; }
 .explorer__img img { width: 100%; }
 .explorer__hint {
   position: absolute; top: 1.2rem; right: 1.4rem;
-  font-family: var(--font-mono); font-size: .62rem;
+  font-family: var(--font-mono); font-size: .72rem;
   letter-spacing: .3em; color: var(--ink-dim);
   background: rgba(11,11,13,.55); backdrop-filter: blur(6px);
   padding: .45rem .9rem;
@@ -503,7 +503,7 @@ button { font-family: inherit; }
 }
 .videostrip__inner { position: relative; text-align: center; padding: 6rem clamp(1.5rem, 5vw, 4rem); max-width: 44em; }
 .videostrip__meta {
-  font-family: var(--font-mono); font-size: .68rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .45em; color: var(--ink-dim);
   text-transform: uppercase;
   display: block; margin-bottom: 1.6rem;
@@ -529,7 +529,7 @@ button { font-family: inherit; }
 }
 .tl-item:first-child { border-top: 1px solid var(--line-soft); }
 .tl-item__date {
-  font-family: var(--font-mono); font-size: .7rem;
+  font-family: var(--font-mono); font-size: font-size: .8rem;
   letter-spacing: .28em; color: var(--accent);
   text-transform: uppercase;
   padding-top: .4rem;
@@ -555,7 +555,7 @@ button { font-family: inherit; }
   margin-top: 1.6rem;
   font-style: normal;
 }
-.quote figcaption { margin-top: 2.2rem; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .3em; color: var(--ink-faint); text-transform: uppercase; }
+.quote figcaption { margin-top: 2.2rem; font-family: var(--font-mono); font-size: .8rem; letter-spacing: .3em; color: var(--ink-faint); text-transform: uppercase; }
 .quote figcaption b { color: var(--ink-dim); font-weight: 400; }
 
 /* ---------- 新闻档案 ---------- */
@@ -626,7 +626,7 @@ button { font-family: inherit; }
 /* ---------- 下载按钮 ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: .8rem;
-  font-family: var(--font-mono); font-size: .72rem;
+  font-family: var(--font-mono); font-size: .8rem;
   letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink);
   border: 1px solid var(--line);
@@ -719,7 +719,7 @@ button { font-family: inherit; }
   display: block;
   margin-top: 1.2rem;
   font-family: var(--font-mono);
-  font-size: .66rem;
+  font-size: font-size: .78rem;
   letter-spacing: .38em;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -770,10 +770,10 @@ button { font-family: inherit; }
   line-height: 1.25;
   letter-spacing: .02em;
 }
-.webcard__body p { color: var(--ink-dim); font-size: .98rem; line-height: 1.85; }
+.webcard__body p { color: var(--ink-dim); font-size: 1.02rem; line-height: 1.85; }
 .webcard__body p b { color: var(--ink); }
 .webcard__body .meta {
-  font-family: var(--font-mono); font-size: .66rem;
+  font-family: var(--font-mono); font-size: .82rem;
   letter-spacing: .28em; color: var(--ink-faint);
   text-transform: uppercase;
 }
@@ -818,7 +818,7 @@ button { font-family: inherit; }
   letter-spacing: .02em;
   margin-bottom: .55rem;
 }
-.dcard__body p { color: var(--ink-dim); font-size: .9rem; line-height: 1.8; }
+.dcard__body p { color: var(--ink-dim); font-size: 1rem; line-height: 1.8; }
 .dcard__body p b { color: var(--ink); }
 
 /* ---------- 历史数字卡 hcard ---------- */
@@ -835,7 +835,7 @@ button { font-family: inherit; }
 }
 .hcard:hover { border-color: rgba(77, 124, 254, 0.5); }
 .hcard__year {
-  font-family: var(--font-mono); font-size: .7rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .3em; color: var(--accent);
   text-transform: uppercase;
 }
@@ -850,7 +850,7 @@ button { font-family: inherit; }
   letter-spacing: .2em; color: var(--ink);
   display: block; margin-bottom: .8rem;
 }
-.hcard p { color: var(--ink-faint); font-size: .9rem; line-height: 1.8; }
+.hcard p { color: var(--ink-faint); font-size: 1rem; line-height: 1.8; }
 
 /* ---------- 引用行内（章节内小引） ---------- */
 .inline-quote {
@@ -893,7 +893,7 @@ button { font-family: inherit; }
 .stat b em { font-style: normal; color: var(--accent); }
 .stat span {
   display: block;
-  font-family: var(--font-mono); font-size: .62rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .3em; color: var(--ink-faint);
   text-transform: uppercase;
   margin-top: .5rem;
@@ -940,7 +940,7 @@ button { font-family: inherit; }
 .point__no {
   display: block;
   font-family: var(--font-mono);
-  font-size: .64rem;
+  font-size: .74rem;
   letter-spacing: .34em;
   color: var(--accent);
   text-transform: uppercase;
@@ -954,7 +954,7 @@ button { font-family: inherit; }
   margin-bottom: .5rem;
 }
 .point p {
-  font-size: .9rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--ink-faint);
 }
@@ -964,7 +964,7 @@ button { font-family: inherit; }
 .sec-label {
   display: flex; align-items: center; gap: 1rem;
   font-family: var(--font-mono);
-  font-size: .68rem;
+  font-size: font-size: .78rem;
   letter-spacing: .4em;
   color: var(--ink-faint);
   text-transform: uppercase;
@@ -1078,7 +1078,7 @@ button { font-family: inherit; }
 .specs-tabs__btn {
   background: none; border: 0;
   padding: .9rem 1.4rem;
-  font-family: var(--font-mono); font-size: .68rem;
+  font-family: var(--font-mono); font-size: .8rem;
   letter-spacing: .3em; color: var(--ink-faint);
   text-transform: uppercase;
   cursor: pointer;
@@ -1133,7 +1133,7 @@ button { font-family: inherit; }
   margin-bottom: .6rem;
 }
 .fact h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin-bottom: .45rem; letter-spacing: .02em; }
-.fact p { font-size: .84rem; line-height: 1.75; color: var(--ink-faint); }
+.fact p { font-size: 1rem; line-height: 1.75; color: var(--ink-faint); }
 .fact p b { color: var(--ink-dim); font-weight: 400; }
 
 @media (max-width: 900px) {
@@ -1173,7 +1173,7 @@ button { font-family: inherit; }
 }
 .chapter-video__no {
   display: block;
-  font-family: var(--font-mono); font-size: .66rem;
+  font-family: var(--font-mono); font-size: .78rem;
   letter-spacing: .5em; color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 1.4rem;
@@ -1389,7 +1389,7 @@ button { font-family: inherit; }
 
 /* 图说：加大、层级分明（历史诉求：图说字太小） */
 .figure__cap {
-  font-size: .95rem;
+  font-size: font-size: 1rem;
 }
 .figure__cap .en {
   color: var(--ink-dim);
@@ -1400,7 +1400,7 @@ button { font-family: inherit; }
   font-size: .92em;
 }
 .figure__cap .no {
-  font-size: .7rem;
+  font-size: font-size: .8rem;
 }
 
 /* 章节标题区：水印大字 + 更从容的呼吸 */
@@ -1575,27 +1575,12 @@ button { font-family: inherit; }
 }
 
 /* nav：品牌 ✕ 符号发光 */
-.nav__brand span {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 1.4em; height: 1.4em;
-  margin-right: .55em;
-  font-size: .72em; line-height: 1;
-  color: var(--accent);
-  border: 1px solid rgba(77, 124, 254, .45);
-  transition: color .4s, border-color .4s, box-shadow .4s, background .4s;
-}
-.nav__brand:hover span {
-  color: #fff;
-  border-color: var(--accent);
-  background: rgba(77, 124, 254, .14);
-  box-shadow: 0 0 16px rgba(77, 124, 254, .45);
-}
 
 /* specs tabs：active 底部线 + 悬浮态 */
 .specs-tabs__btn {
   background: none; border: none; cursor: pointer;
   font-family: var(--font-mono);
-  font-size: .72rem; letter-spacing: .24em;
+  font-size: font-size: .8rem; letter-spacing: .24em;
   text-transform: uppercase;
   color: var(--ink-faint);
   padding: .9rem 1.2rem;
@@ -1628,7 +1613,7 @@ button { font-family: inherit; }
 /* points：编号微光 */
 .point__no {
   font-family: var(--font-mono);
-  font-size: .62rem; letter-spacing: .3em;
+  font-size: font-size: .74rem; letter-spacing: .3em;
   color: var(--ink-faint);
   text-transform: uppercase;
 }
@@ -1662,4 +1647,107 @@ button { font-family: inherit; }
 a:focus-visible, button:focus-visible {
   outline: 1px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ============================================================
+   v15 卡片设计 — 借鉴 tourbillon
+   统一边框/面板渐变/hover 蓝光晕
+   ============================================================ */
+.hcard, .dcard, .point, .fact, .stat, .webcard, .specs-tabs, .tl-item {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), rgba(10, 11, 15, 0.4));
+  transition: border-color 0.35s, transform 0.35s var(--ease), box-shadow 0.45s;
+}
+.hcard:hover, .dcard:hover, .point:hover, .fact:hover, .webcard:hover {
+  border-color: rgba(0, 75, 250, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(0, 75, 250, 0.45), 0 22px 48px -22px rgba(0, 75, 250, 0.4);
+}
+
+/* hcard 细节（tourbillon 式） */
+.hcard {
+  padding: clamp(1.8rem, 4vh, 2.4rem) clamp(1.4rem, 3vw, 1.9rem);
+}
+.hcard h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: .8rem 0 .4rem;
+  letter-spacing: .04em;
+}
+.hcard__num {
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+  color: var(--accent);
+  margin-bottom: .8rem;
+}
+.hcard p:last-child {
+  color: var(--ink-dim);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* point 卡片 */
+.point {
+  padding: clamp(1.6rem, 3.5vh, 2.2rem) clamp(1.3rem, 2.6vw, 1.8rem);
+}
+.point h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  margin: .7rem 0 .5rem;
+}
+
+/* webcard 视频统一 16:9 */
+.webcard__media video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* facts/stat 也统一卡片化 */
+.fact, .stat {
+  padding: clamp(1.3rem, 3vh, 1.8rem) clamp(1.1rem, 2.4vw, 1.5rem);
+}
+
+/* ============================================================
+   v15 补充 — dcard 图片比例 / hero 文案层级 / 其他
+   ============================================================ */
+.dcard {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--panel), rgba(10, 11, 15, 0.4));
+  transition: border-color 0.35s, transform 0.35s var(--ease), box-shadow 0.45s;
+}
+.dcard:hover {
+  border-color: rgba(0, 75, 250, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(0, 75, 250, 0.45), 0 22px 48px -22px rgba(0, 75, 250, 0.4);
+}
+.dcard img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+.dcard:hover img { transform: scale(1.04); }
+.dcard__body {
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+}
+.dcard__body .no {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .3em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.dcard__body h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  margin: .6rem 0 .5rem;
+}
+.dcard__body p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--ink-dim);
 }
