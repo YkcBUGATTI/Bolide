@@ -126,6 +126,47 @@
     }
   });
 
+  /* 草图轮播 */
+  var slider = document.getElementById('sketchSlider');
+  if (slider) {
+    var imgs = slider.querySelectorAll('.slider__stage img');
+    var cur = 0;
+    var capLabel = document.getElementById('sketchCapLabel');
+    var capText = document.getElementById('sketchCapText');
+    var curNo = document.getElementById('sketchCur');
+    var showSlide = function (i) {
+      cur = (i + imgs.length) % imgs.length;
+      imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === cur); });
+      if (capLabel) capLabel.textContent = 'Sketch · 0' + (cur + 1);
+      if (capText) capText.textContent = imgs[cur].dataset.cap || '';
+      if (curNo) curNo.textContent = '0' + (cur + 1);
+    };
+    var prev = document.getElementById('sketchPrev');
+    var next = document.getElementById('sketchNext');
+    if (prev) prev.addEventListener('click', function () { showSlide(cur - 1); });
+    if (next) next.addEventListener('click', function () { showSlide(cur + 1); });
+    /* 键盘左右键 */
+    slider.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { showSlide(cur - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { showSlide(cur + 1); e.preventDefault(); }
+    });
+    showSlide(0);
+  }
+
+  /* 规格 tab */
+  var tabsBox = document.getElementById('specsTabs');
+  if (tabsBox) {
+    var tabBtns = tabsBox.querySelectorAll('.specs-tabs__btn');
+    var tabPanels = tabsBox.querySelectorAll('.specs-tabs__panel');
+    tabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var t = btn.dataset.tab;
+        tabBtns.forEach(function (b) { b.classList.toggle('is-on', b === btn); });
+        tabPanels.forEach(function (p) { p.classList.toggle('is-on', p.dataset.panel === t); });
+      });
+    });
+  }
+
   /* PWA */
   if (window.location.protocol === 'https:' && 'serviceWorker' in navigator) {
     window.addEventListener('load', function () {
