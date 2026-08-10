@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%23c8102e' stroke-width='10' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%23004bfa' stroke-width='10' stroke-linecap='square'/%3E%3C/svg%3E">
 </head>
 <body>
 
@@ -260,6 +260,13 @@
     </div>
   </div>
 
+  <!-- 官网三大章节语汇 -->
+  <div class="cards3 reveal">
+    <div><span class="no">RACING PEDIGREE</span><h3>Born for the track</h3><p>An ultra-lightweight design built around this legendary engine, tested from virtual simulation to real circuits.</p></div>
+    <div><span class="no">W16 POWER UNLEASHED</span><h3>The W16, unleashed</h3><p>Turbochargers and lubrication redesigned to withstand higher temperatures and forces — every track detail recalculated.</p></div>
+    <div><span class="no">NEW SOUNDTRACK</span><h3>A new soundtrack</h3><p>Intake and exhaust de-throttled for faster response — a new W16 symphony on every lap.</p></div>
+  </div>
+
   <!-- W16 explorer -->
   <div class="explorer reveal" id="explorer">
     <div class="explorer__img">
@@ -407,7 +414,7 @@
     </div>
     <div class="scale2__col">
       <span class="lbl">MAXIMUM DOWNFORCE</span>
-      <span class="num" style="color:var(--red);">≈3,000<small>KG</small></span>
+      <span class="num" style="color:var(--accent-bright);">≈3,000<small>KG</small></span>
       <div class="scale2__track"><div class="scale2__fill scale2__fill--down" style="--w:100%;"></div></div>
       <span class="scale2__note">weight the air presses down — <b>twice the car itself</b></span>
     </div>
@@ -541,6 +548,19 @@
 </section>
 
 <div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
+
+<!-- Track video banner -->
+<div class="videostrip reveal">
+  <video autoplay muted loop playsinline preload="metadata" poster="assets/doc06-birdseye.webp">
+    <source src="assets/web/moodcut.mp4" type="video/mp4">
+  </video>
+  <div class="videostrip__veil"></div>
+  <div class="videostrip__inner">
+    <span class="videostrip__meta">ON TRACK — 2023 → 2026</span>
+    <h2>The track is its only home</h2>
+    <p>From high-speed testing at the Nürburgring to eight Bolides at dawn in Miami — a life written on asphalt.</p>
+  </div>
+</div>
 
 <!-- ================= DOC.06 TRACK CHRONICLE ================= -->
 <section class="doc" id="doc06">
