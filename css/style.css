@@ -875,10 +875,7 @@ button { font-family: inherit; }
   border-color: rgba(0, 75, 250, 0.5);
 }
 .webcard__media { position: relative; overflow: hidden; background: #0e0e11; }
-.webcard__media video, .webcard__media img {
-  width: 100%; height: 100%; object-fit: cover;
-  min-height: 300px;
-}
+
 .webcard__media .tag {
   position: absolute; top: 1rem; left: 1rem;
   font-family: var(--font-mono); font-size: .6rem;
@@ -1028,7 +1025,7 @@ button { font-family: inherit; }
 @media (max-width: 900px) {
   .webcard, .webcard--flip { grid-template-columns: 1fr; }
   .webcard--flip .webcard__body { order: 0; }
-  .webcard__media video, .webcard__media img { min-height: 220px; }
+  
   .dcards, .hcards { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .chapter-break__inner { grid-template-columns: 1fr; gap: 1rem; }
@@ -1841,11 +1838,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* webcard 视频统一 16:9 */
-.webcard__media video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
+
 
 /* facts/stat 也统一卡片化 */
 .fact, .stat {
@@ -1946,3 +1939,71 @@ a:focus-visible, button:focus-visible {
   text-shadow: 0 0 12px rgba(0, 75, 250, 0.2);
 }
 .chapter-break__meta span, .chapter-break__meta a { color: #6f9dff; }
+
+/* ============================================================
+   v22 移动端视频修复 — 消除右侧黑边
+   ============================================================ */
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* 全屏/章节背景视频：确保 cover 裁剪、无溢出 */
+.hero__media video,
+.chapter-video video,
+.videostrip video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* webcard 视频：容器固定比例，视频 cover 填满（修复手机黑边） */
+.webcard__media {
+  position: relative;
+  overflow: hidden;
+  background: #0e0e11;
+  aspect-ratio: 16 / 9;
+}
+.webcard__media video,
+.webcard__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.webcard__media video {
+  position: absolute;
+  inset: 0;
+}
+/* 桌面保持原高度（min-height 300px 由旧规则提供） */
+
+/* 移动端：视频容器高度由比例决定，避免 min-height 拉伸 */
+@media (max-width: 900px) {
+  
+  .webcard__media { aspect-ratio: 16 / 9; }
+  .hero__media video { min-height: 100svh; }
+}
+
+/* ============================================================
+   v22b 视频黑边加固 — Safari/WebView 兼容
+   ============================================================ */
+video::-webkit-media-controls { }
+video {
+  /* 确保 iOS/Safari 上视频不显示固有尺寸黑边 */
+  background: transparent;
+}
+.hero__media, .chapter-video, .videostrip, .webcard__media {
+  /* 视频容器统一裁切 */
+  overflow: hidden;
+}
+
+/* 移动端：chapter-video 高度限制，避免过大拉伸 */
+@media (max-width: 900px) {
+  .chapter-video { min-height: 52vh; }
+}
