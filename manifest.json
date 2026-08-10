@@ -1,0 +1,18 @@
+{
+  "name": "BOLIDE — 火流星档案",
+  "short_name": "BOLIDE",
+  "description": "Bugatti Bolide 工程档案：设计草图、官方图说、技术规格与赛道纪事。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%23c8102e' stroke-width='10' stroke-linecap='square'/%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
