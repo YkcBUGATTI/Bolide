@@ -1,5 +1,5 @@
 ﻿/* BOLIDE — Service Worker：页面级缓存（媒体资源量大，仅缓存骨架） */
-const CACHE = 'bolide-v3';
+const CACHE = 'bolide-v4';
 const SHELL = [
   './',
   './index.html',
