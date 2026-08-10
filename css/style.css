@@ -1005,7 +1005,7 @@ button { font-family: inherit; }
 .limited__num {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 12vw, 9rem);
+  font-size: clamp(3.2rem, 8vw, 6rem);
   line-height: .95;
   letter-spacing: .02em;
   color: var(--ink);
@@ -1421,7 +1421,7 @@ button { font-family: inherit; }
 
 /* hero：数据条数字更大、标题更震撼 */
 .hero__title {
-  font-size: clamp(5.5rem, 22vw, 19rem);
+  font-size: clamp(4.6rem, 18vw, 15rem);
 }
 .hero__data b {
   font-size: clamp(2.2rem, 4.6vw, 3.4rem);
@@ -1783,3 +1783,30 @@ a:focus-visible, button:focus-visible {
   text-align: right;
   white-space: nowrap;
 }
+
+/* ============================================================
+   v18 章节标题光效 — 学习 tourbillon（.sec-tag 蓝色辉光）
+   ============================================================ */
+.chapter-break__no {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 75, 250, 0.6);
+  text-shadow: 0 0 24px rgba(0, 75, 250, 0.35);
+  transition: text-shadow 0.5s, -webkit-text-stroke 0.5s;
+}
+.chapter-break:hover .chapter-break__no {
+  -webkit-text-stroke: 1px rgba(0, 75, 250, 0.9);
+  text-shadow: 0 0 40px rgba(0, 75, 250, 0.55);
+}
+.chapter-break h2 {
+  color: var(--ink);
+  text-shadow: 0 0 30px rgba(0, 75, 250, 0.25);
+}
+.chapter-break h2 .latin {
+  color: #6f9dff;
+  text-shadow: 0 0 14px rgba(0, 75, 250, 0.5);
+}
+.chapter-break__meta {
+  color: var(--ink-dim);
+  text-shadow: 0 0 12px rgba(0, 75, 250, 0.2);
+}
+.chapter-break__meta span, .chapter-break__meta a { color: #6f9dff; }
