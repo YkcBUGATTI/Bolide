@@ -1,5 +1,5 @@
 ﻿/* BOLIDE — Service Worker：页面级缓存（媒体资源量大，仅缓存骨架） */
-const CACHE = 'bolide-v4';
+const CACHE = 'bolide-v5';
 const SHELL = [
   './',
   './index.html',
@@ -12,7 +12,11 @@ const SHELL = [
   './assets/web/moodcut.mp4',
   './assets/web/cota.mp4',
   './assets/web/miami.mp4',
-  './assets/web/brakes.mp4'
+  './assets/web/brakes.mp4',
+  './assets/web/moodcut1.mp4',
+  './assets/web/moodcut2.mp4',
+  './assets/web/moodcut3.mp4',
+  './assets/web/downforce.mp4'
 ];
 
 self.addEventListener('install', (e) => {
