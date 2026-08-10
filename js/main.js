@@ -9,9 +9,9 @@
   var archiveHead = document.getElementById('archiveHead');
   var archiveToggle = document.getElementById('archiveToggle');
 
-  /* 导航滚动态 */
+  /* 导航滚动态：开屏隐藏，滚过 hero 后直接出现（无淡化） */
   var onScroll = function () {
-    if (nav) nav.classList.toggle('is-solid', window.scrollY > 40);
+    if (nav) nav.classList.toggle('is-solid', window.scrollY > window.innerHeight * 0.8);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();

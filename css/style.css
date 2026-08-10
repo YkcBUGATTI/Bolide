@@ -71,7 +71,10 @@ button { font-family: inherit; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.6rem clamp(1.5rem, 5vw, 4rem);
-  transition: background .4s, padding .4s;
+  /* 开屏隐藏：滚过 hero 后由 JS 直接切换 is-solid 出现，无淡化过渡 */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .nav.is-solid {
   background: rgba(11, 11, 13, .92);
@@ -79,6 +82,9 @@ button { font-family: inherit; }
   -webkit-backdrop-filter: blur(14px);
   padding-top: 1rem; padding-bottom: 1rem;
   border-bottom: 1px solid var(--line-soft);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .nav__brand {
   font-family: var(--font-display);
