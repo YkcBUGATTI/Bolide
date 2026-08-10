@@ -1,5 +1,5 @@
-/* BOLIDE — Service Worker：页面级缓存（媒体资源量大，仅缓存骨架） */
-const CACHE = 'bolide-v1';
+﻿/* BOLIDE — Service Worker：页面级缓存（媒体资源量大，仅缓存骨架） */
+const CACHE = 'bolide-v3';
 const SHELL = [
   './',
   './index.html',
@@ -8,7 +8,11 @@ const SHELL = [
   './js/main.js',
   './manifest.json',
   './assets/hero.webp',
-  './assets/web/hero.mp4'
+  './assets/web/hero.mp4',
+  './assets/web/moodcut.mp4',
+  './assets/web/cota.mp4',
+  './assets/web/miami.mp4',
+  './assets/web/brakes.mp4'
 ];
 
 self.addEventListener('install', (e) => {

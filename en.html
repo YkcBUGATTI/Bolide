@@ -3,73 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOLIDE — The Dossier · Bugatti Bolide</title>
-<meta name="description" content="The Bugatti Bolide: a machine built for the track. 1,600 hp W16, 1,450 kg dry weight, limited to 40 units — design sketches, engineering details, performance data and a track chronicle.">
+<title>BOLIDE — Bugatti Bolide</title>
+<meta name="description" content="The Bugatti Bolide: a track-only hypercar built around the iconic W16 engine. 1,600 hp, 1,450 kg dry weight, 40 units — the full story, from design sketches to track chronicle.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="BOLIDE — The Dossier">
-<meta property="og:description" content="Built for the track. The W16 in its purest form — 1,600 hp / 1,450 kg / 40 units.">
+<meta property="og:title" content="BOLIDE — Bugatti Bolide">
+<meta property="og:description" content="A track-only hypercar built around the iconic W16 engine — 1,600 hp / 1,450 kg / 40 units.">
 <meta property="og:image" content="assets/hero.webp">
-<meta property="og:url" content="https://bolide.hypercar.site/">
+<meta property="og:url" content="https://bolide.hypercar.site/en.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0b'/%3E%3Cpath d='M22 22 L78 78 M78 22 L22 78' stroke='%23004bfa' stroke-width='10' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0d'/%3E%3Ctext x='50' y='68' font-size='62' text-anchor='middle' fill='%23f4f2ee' font-family='serif'%3EB%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
-<div class="grid-bg" aria-hidden="true"></div>
-
 <header class="nav" id="nav">
-  <a class="nav__brand" href="#hero">
-    <span class="nav__x" aria-hidden="true">✕</span>
-    <b>BOLIDE</b>
-    <span class="nav__file">FILE 01 / 07</span>
-  </a>
+  <a class="nav__brand" href="#hero"><span>✕</span>BOLIDE</a>
   <div class="nav__right">
-    <span class="nav__doc"><i>DOC</i> 00—07</span>
-    <a class="nav__lang" href="index.html">中文</a>
-    <button class="nav__menu" id="menuBtn" aria-expanded="false">INDEX</button>
+    <a class="nav__lang" href="index.html" onclick="localStorage.setItem('bolide-lang','zh')">中文</a>
+    <button class="nav__menu" id="menuBtn" aria-expanded="false">Index</button>
   </div>
 </header>
 
 <div class="docmenu" id="docmenu">
-  <nav class="docmenu__list" aria-label="Dossier index">
-    <a href="#hero"><i>DOC.00</i>Cover</a>
-    <a href="#doc01"><i>DOC.01</i>The Meteorite</a>
-    <a href="#doc02"><i>DOC.02</i>Design</a>
-    <a href="#doc03"><i>DOC.03</i>Engineering</a>
-    <a href="#doc04"><i>DOC.04</i>Performance</a>
-    <a href="#doc05"><i>DOC.05</i>The Cockpit</a>
-    <a href="#doc06"><i>DOC.06</i>Track Chronicle</a>
-    <a href="#doc07"><i>DOC.07</i>Legacy</a>
-    <a href="#archive"><i>APP</i>Press Archive</a>
+  <nav class="docmenu__list" aria-label="Index">
+    <a href="#hero"><i>00</i>Cover</a>
+    <a href="#ch01"><i>01</i>The Meteorite</a>
+    <a href="#ch02"><i>02</i>Design</a>
+    <a href="#ch03"><i>03</i>Engineering</a>
+    <a href="#ch04"><i>04</i>Performance</a>
+    <a href="#ch05"><i>05</i>The Cockpit</a>
+    <a href="#ch06"><i>06</i>Track Chronicle</a>
+    <a href="#ch07"><i>07</i>Legacy</a>
   </nav>
-</div>
-
-<div class="page-gauge" aria-hidden="true">
-  <div class="page-gauge__fill" id="gaugeFill"></div>
-  <span class="page-gauge__no"><b id="gaugeNo">00</b> / 07</span>
 </div>
 
 <main>
 
-<!-- ================= DOC.00 COVER ================= -->
+<!-- ============ HERO ============ -->
 <section class="hero" id="hero">
   <div class="hero__media">
     <video autoplay muted loop playsinline preload="metadata" poster="assets/hero.webp">
       <source src="assets/web/hero.mp4" type="video/mp4">
     </video>
     <div class="hero__veil"></div>
-    <div class="hero__grid" aria-hidden="true"></div>
   </div>
-  <p class="hero__kicker">BUGATTI AUTOMOBILES S.A.S. — <em>MOLSHEIM</em></p>
-  <div class="hero__coord" aria-hidden="true">48.5202° N · 7.4951° E — ATELIER MOLSHEIM</div>
   <div class="hero__content">
-    <p class="hero__tag">LE PUR SANG DES AUTOMOBILES <i>✕</i> TRACK ONLY</p>
+    <p class="hero__tag">LE PUR SANG DES AUTOMOBILES <b>✕</b> TRACK ONLY</p>
     <h1 class="hero__title">BOLIDE</h1>
-    <p class="hero__sub">Built for the track. The W16 in its purest form — limited to 40 units.</p>
+    <p class="hero__sub">A track-only hypercar, built around the iconic W16 engine.</p>
     <div class="hero__data">
-      <div><b>1,600</b><span>HP</span></div>
+      <div><b><em data-count="1600">0</em></b><span>HP</span></div>
       <div><b>1,450</b><span>KG DRY</span></div>
       <div><b>2.2</b><span>S · 0–100</span></div>
       <div><b>40</b><span>UNITS</span></div>
@@ -78,911 +62,685 @@
   <div class="hero__scroll" aria-hidden="true">SCROLL</div>
 </section>
 
-<!-- Opening -->
-<div class="lede reveal">
-  <p>In October 2020, a car rolled out of the garage in Molsheim and roared into the night. No stage, no show — <b>just a film, and a sentence that would be repeated many times: The Bugatti Bolide is real.</b><span class="en">The most extreme hyper sports car of modern times.</span></p>
+<!-- ============ INTRO ============ -->
+<section class="mantra reveal">
+  <blockquote>The Bugatti Bolide is real.<span class="zh">December 8, 2020 — a film and a single sentence opened a project with no precedent.</span></blockquote>
+</section>
+
+<!-- ============ 01 THE METEORITE ============ -->
+<div class="chapter-break reveal" id="ch01">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">01</span>
+    <div>
+      <h2>The Meteorite<span class="latin">Le Météore</span></h2>
+      <p>From 19th-century French — bolide: a meteor that crosses the atmosphere at speed and burns out on its way to earth.</p>
+      <span class="chapter-break__meta">From Concept to Production — 2020 → 2024</span>
+    </div>
+  </div>
 </div>
 
-<!-- ================= DOC.01 THE METEORITE ================= -->
-<section class="doc" id="doc01">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.01</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">2020 → 2021 — FROM CONCEPT TO PRODUCTION</span>
-    </div>
-    <h2>The Meteorite<span class="latin">BOLIDE — LE MÉTÉORE</span></h2>
-  </header>
-
-  <div class="story2">
-    <div class="prose reveal">
-      <p class="lead">The name comes from 19th-century French — <b>bolide</b>: a meteor that crosses the atmosphere at speed and burns out on its way to earth. A fitting name for a machine built with one purpose and no mercy.</p>
-      <p>From a blank sheet to a drivable car took <b>less than a year</b>. Designers and engineers simulated maximum loads, acceleration and lap times in a virtual environment — then built it. In December 2020, the photo release carried a single sentence: <b>The Bugatti Bolide is real.</b></p>
-      <p>At first it was "a drivable experimental vehicle." The enthusiasm of customers worldwide changed that. In August 2021, at The Quail in Monterey, Bugatti announced: <b>the Bolide will be produced — 40 units, at four million euros each.</b></p>
-    </div>
-    <div class="prose reveal">
-      <p>The recognition followed quickly. In 2021, an expert jury at the Festival Automobile International in Paris voted it <b>the most beautiful hypercar in the world</b> — by a substantial margin. In 2022, it took the "Design Award" at the Concorso d'Eleganza Villa d'Este on Lake Como.</p>
-      <p>The juries saw the same thing: every surface of this car is working. Not a single line exists for decoration — <b>that is its beauty.</b></p>
-      <p class="lead" style="margin-top:1.6em;">Six years on, the decision has proved itself.</p>
-      <p>The run of 40 was never diluted: every car is finished by hand in Molsheim, from paint to interior, to the same standard as any collectible Bugatti. The only difference — this one was born for the track.</p>
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="split">
+      <div class="prose reveal">
+        <p class="lead">From a blank sheet to a drivable car took <b>less than a year</b>. Designers and engineers simulated maximum loads, acceleration and lap times in a virtual environment — then built it.</p>
+        <p>At first it was "a drivable experimental vehicle." The enthusiasm of customers worldwide changed that. In August 2021, at The Quail in Monterey, Bugatti announced: <b>the Bolide will be produced — 40 units</b>.</p>
+      </div>
+      <div class="prose reveal">
+        <p class="lead">The recognition followed quickly.</p>
+        <p>In 2021, an expert jury at the Festival Automobile International in Paris voted it the <b>most beautiful hypercar in the world</b>. In 2022, it took the Design Award at the Concorso d'Eleganza Villa d'Este.</p>
+        <p>The juries saw the same thing: every surface of this car is working. <b>Not a single line exists for decoration — that is its beauty.</b></p>
+      </div>
     </div>
   </div>
 
-  <figure class="fig fig--full reveal">
-    <div class="fig__media">
+  <figure class="figure figure--full reveal">
+    <div class="figure__media">
       <img src="assets/doc01-concept.webp" alt="Bugatti Bolide concept" loading="lazy" width="2000" height="1334">
-      <span class="fig__no"><i>FIG.</i> 01</span>
     </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.01</span>
+    <figcaption class="figure__cap" style="max-width:var(--w-doc);margin-left:auto;margin-right:auto;padding:0 clamp(1.5rem,5vw,4rem);">
+      <span class="no">01</span>
       <span class="en">An extreme, experimental design study: the Bugatti Bolide.</span>
     </figcaption>
   </figure>
 
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc01-topview.webp" alt="Bolide top view" loading="lazy" width="2000" height="1334">
-        <span class="fig__no"><i>FIG.</i> 02</span>
+  <div class="chapter__inner">
+    <div class="hcards reveal">
+      <div class="hcard">
+        <span class="hcard__year">2020 · 10</span>
+        <h3>The Online Reveal</h3>
+        <span class="hcard__num">A film · A sentence</span>
+        <p>No stage, no show — the Bolide appeared in a film, opening with "The Bugatti Bolide is real." Two days later it arrived in CSR Racing 2, letting the world press its throttle on a phone screen.</p>
       </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.02</span>
-        <span class="en">Top view of the real, drivable concept.</span>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc01-real.webp" alt="Bolide real" loading="lazy" width="2000" height="1334">
-        <span class="fig__no"><i>FIG.</i> 03</span>
+      <div class="hcard">
+        <span class="hcard__year">2021 · 08</span>
+        <h3>The Production Decision</h3>
+        <span class="hcard__num">40 units · 4m euros</span>
+        <p>At The Quail in Monterey, Bugatti announced a limited production run. Customer demand made the decision — every reservation became a track machine built to its owner's will.</p>
       </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.03</span>
-        <span class="en">The Bugatti Bolide is real: the technical concept is drivable.</span>
+      <div class="hcard">
+        <span class="hcard__year">2024 · Onward</span>
+        <h3>Deliveries Begin</h3>
+        <span class="hcard__num">Hand-built in Molsheim</span>
+        <p>Every car is finished by hand in Molsheim, from paint to interior, to the same standard as any collectible Bugatti. The only difference — this one was born for the track.</p>
+      </div>
+    </div>
+
+    <div class="figrow reveal">
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc01-topview.webp" alt="Bolide top view" loading="lazy" width="2000" height="1334">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">02</span>
+          <span class="en">Top view of the real, drivable concept.</span>
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc01-real.webp" alt="Bolide real" loading="lazy" width="2000" height="1334">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">03</span>
+          <span class="en">The Bugatti Bolide is real: the technical concept is drivable.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 DESIGN ============ -->
+<div class="chapter-break chapter-break--dark reveal" id="ch02">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">02</span>
+    <div>
+      <h2>Form Follows Performance<span class="latin">Molsheim Design Studio</span></h2>
+      <p>Every technical consideration has been translated directly into an aesthetic design.</p>
+      <span class="chapter-break__meta">Design Studio — Frank Heyl</span>
+    </div>
+  </div>
+</div>
+
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="split">
+      <div class="prose reveal">
+        <p class="lead">The design team engraved one creed into every line of the Bolide: <b>no line was drawn for fun.</b></p>
+        <p>Under hard braking the nose drops, the front splitter closes on the ground and downforce rises — yet the engineers deliberately cap the front axle's downforce to preserve aero balance. Side intercoolers sit in deep intakes to hold the engine at its optimum temperature.</p>
+        <p>Even the mirrors were argued over: Bugatti chose physical mirrors over cameras, because <b>drivers judge distances faster</b>. It is a detail only a racing driver would care about — and the Bolide cares.</p>
+      </div>
+      <div class="prose reveal">
+        <p class="lead">Two signatures define its face.</p>
+        <p><b>The horseshoe grille</b> — 115 years of Bugatti DNA, here carrying both structure and aero function. And the <b>X</b> — the signature taken from the X-planes of aviation history: X-shaped taillights framing the central exhaust, running from the nose through the cockpit to the seats.</p>
+        <p>It all begins with the design studio's sketches. These archival drawings — aerodynamic analysis, interior vision, top-view layout — still mark where every technical decision landed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter__inner">
+    <div class="gallery reveal">
+      <figure>
+        <img src="assets/doc03-aero-sketch.webp" alt="Frank Heyl aero sketch" loading="lazy" width="1800" height="1013">
+        <figcaption><span>Sketch — Frank Heyl</span>Aerodynamic technical drawing</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/sketch-topview.webp" alt="Top view design sketch" loading="lazy" width="1800" height="1013">
+        <figcaption><span>Sketch — Artur Hindalong</span>Top-view layout</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/doc05-interior-sketch.webp" alt="Aldo Sica interior sketch" loading="lazy" width="1800" height="1013">
+        <figcaption><span>Sketch — Aldo Sica</span>Interior vision</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="chapter__inner">
+    <div class="quote reveal">
+      <blockquote>Design and technology flow into one another in the Bolide. Every technical consideration has been translated directly into an aesthetic design.</blockquote>
+      <figcaption><b>Frank Heyl</b> — Deputy Director of Design, Bugatti</figcaption>
+    </div>
+
+    <div class="dcards reveal">
+      <div class="dcard">
+        <img src="assets/doc03-splitter.webp" alt="Front splitter" loading="lazy" width="1800" height="1200">
+        <div class="dcard__body">
+          <span class="no">Aero · 01</span>
+          <h3>The Front Splitter</h3>
+          <p>Under hard braking the nose drops, the splitter closes on the ground and downforce rises — yet the front axle's downforce is <b>deliberately capped</b> to preserve aero balance.</p>
+        </div>
+      </div>
+      <div class="dcard">
+        <img src="assets/doc03-rearwing.webp" alt="Rear wing" loading="lazy" width="1800" height="1200">
+        <div class="dcard__body">
+          <span class="no">Aero · 02</span>
+          <h3>The Adjustable Wing</h3>
+          <p>The rear wing adapts to each circuit's character, balancing downforce against drag — <b>a development process that usually exists only at the top level of motorsport</b>.</p>
+        </div>
+      </div>
+      <div class="dcard">
+        <img src="assets/doc03-details.webp" alt="Details" loading="lazy" width="1800" height="1200">
+        <div class="dcard__body">
+          <span class="no">Aero · 03</span>
+          <h3>Air Curtains &amp; Vortices</h3>
+          <p>Air curtains ahead of the front wheels guide the flow around the car; winglets on the splitter's edges create vortices that feed the diffuser — <b>every surface is working</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 ENGINEERING ============ -->
+<div class="chapter-break reveal" id="ch03">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">03</span>
+    <div>
+      <h2>The W16, Unleashed<span class="latin">8.0 L — Quad Turbo</span></h2>
+      <p>Race track optimization means recalculating everything.</p>
+      <span class="chapter-break__meta">FIA LMH/LMDh — Le Mans Prototype Standards</span>
+    </div>
+  </div>
+</div>
+
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="bignums reveal">
+      <div><b><em data-count="1600">0</em></b><span>Horsepower</span></div>
+      <div><b><em data-count="1600">0</em></b><span>Nm Torque</span></div>
+      <div><b><em data-count="1450">0</em></b><span>Kg Dry Weight</span></div>
+      <div><b>0.91<small>KG/HP</small></b><span>Weight-to-Power</span></div>
+    </div>
+
+    <div class="split">
+      <div class="prose reveal">
+        <p class="lead">The W16 — the heart of every road-going Bugatti for twenty years — is pushed to its final form in the Bolide.</p>
+        <p>Turbochargers and lubrication systems were redesigned to withstand higher temperatures and forces; intake and exhaust were de-throttled for faster response and a new W16 symphony. The engine sits in a newly developed carbon monocoque, positioned <b>60 mm further forward</b> than in the Chiron — packaging built for the track.</p>
+        <p>The monocoque was developed to the demanding FIA LMH/LMDh requirements — the same standards as Le Mans prototypes — in the world's highest-performing carbon material. Safety is not an add-on; <b>it is part of the engineering.</b></p>
+      </div>
+      <div class="prose reveal">
+        <p class="lead">The manufacturing is archival-grade, too.</p>
+        <p>A 3D-printed titanium pushrod weighs just <b>100 grams</b> and transmits forces up to <b>3.5 tonnes</b> — precision as fine as 0.1 mm. The X-shaped bracket in the cockpit, 3D-printed in aluminum, weighs <b>300 grams</b> and withstands loads beyond <b>700 kg</b>.</p>
+        <p>Before any Bolide meets its owner, it passes a final inspection and circuit testing program at Mirecourt — the first time Bugatti built its own quality process for a car with no benchmark.</p>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b>100<small style="font-size:.45em;color:var(--ink-faint)">g</small></b><span>Titanium pushrod</span></div>
+      <div class="stat"><b>3.5<small style="font-size:.45em;color:var(--ink-faint)">t</small></b><span>Force transmitted</span></div>
+      <div class="stat"><b>0.1<small style="font-size:.45em;color:var(--ink-faint)">mm</small></b><span>3D printing accuracy</span></div>
+      <div class="stat"><b>390<small style="font-size:.45em;color:var(--ink-faint)">mm</small></b><span>Carbon-carbon discs</span></div>
+    </div>
+  </div>
+
+  <div class="chapter__inner">
+    <div class="explorer reveal" id="explorer">
+      <div class="explorer__img">
+        <img src="assets/doc04-drivetrain.webp" alt="Bolide drivetrain technical illustration" loading="lazy" width="1800" height="1013">
+        <span class="explorer__hint">Hover to explore ✕</span>
+        <div class="hotspot" style="left:17%;top:56%;" data-h="0">
+          <div class="hotspot__label"><b>Carbon-Carbon Brakes</b><small>390 mm discs · 8-piston front calipers<br>on par with F1 / LMh machinery</small></div>
+        </div>
+        <div class="hotspot" style="left:30%;top:44%;" data-h="1">
+          <div class="hotspot__label"><b>Pushrod Suspension</b><small>Front double wishbone · pushrod with horizontal spring-damper<br>LMP1 prototype architecture</small></div>
+        </div>
+        <div class="hotspot" style="left:52%;top:38%;" data-h="2">
+          <div class="hotspot__label"><b>W16 · 8.0 L</b><small>1,600 hp @ 7,050 rpm · 1,600 Nm<br>7,993 cc · quad turbo</small></div>
+        </div>
+        <div class="hotspot" style="left:63%;top:56%;" data-h="3">
+          <div class="hotspot__label"><b>Quad Turbo · Track-Ready</b><small>Lubrication and cooling redesigned for the track<br>de-throttled intake and exhaust</small></div>
+        </div>
+        <div class="hotspot" style="left:76%;top:42%;" data-h="4">
+          <div class="hotspot__label"><b>7-Speed DSG</b><small>All-wheel drive · front limited-slip differential<br>powertrain 60 mm forward vs. Chiron</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="webcard reveal">
+      <div class="webcard__media">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/doc04-brakes.webp">
+          <source src="assets/web/brakes.mp4" type="video/mp4">
+        </video>
+        <span class="tag">BREMBO COLLABORATION</span>
+      </div>
+      <div class="webcard__body">
+        <span class="no">Braking System</span>
+        <h3>With Brembo, braking at Formula 1 level</h3>
+        <p>Carbon-carbon <b>390 mm</b> discs on par with LMh/LMDh and Formula 1 machinery; the front caliper is <b>the largest Brembo has ever fitted to a racing car</b>, with 8 pistons and dedicated cooling ducts.</p>
+        <p class="meta">"Not only meets, but surpasses the extraordinary demands of the Bolide." — CTO Emilio Scervo</p>
+      </div>
+    </div>
+
+    <div class="quote reveal">
+      <blockquote>To pass these stringent but critical safety tests, we needed to ensure that everything about the monocoque was technically perfect.</blockquote>
+      <figcaption><b>Christian Willmann</b> — Chief Engineer, Bugatti</figcaption>
+    </div>
+
+    <div class="figrow reveal">
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc04-brakes.webp" alt="Bolide carbon brakes" loading="lazy" width="1800" height="1200">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">04</span>
+          <span class="en">The carbon-carbon brake system is on par with LMh/LMDh and Formula 1 machinery.</span>
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc04-caliper.webp" alt="Brembo caliper" loading="lazy" width="1800" height="1200">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">05</span>
+          <span class="en">The front caliper, the largest Brembo has ever fitted to a racing car.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <figure class="figure reveal">
+      <div class="figure__media">
+        <img src="assets/doc04-monocoque.webp" alt="Bolide monocoque" loading="lazy" width="1800" height="1013">
+      </div>
+      <figcaption class="figure__cap">
+        <span class="no">06</span>
+        <span class="en">The new monocoque positions the W16 powertrain 60 mm further forward than in the Chiron.</span>
       </figcaption>
     </figure>
   </div>
 </section>
 
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= DOC.02 DESIGN ================= -->
-<section class="doc" id="doc02">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.02</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">MOLSHEIM DESIGN STUDIO — FRANK HEYL</span>
-    </div>
-    <h2>Design<span class="latin">FORM FOLLOWS PERFORMANCE</span></h2>
-  </header>
-
-  <div class="story2">
-    <div class="prose reveal">
-      <p class="lead">The design team engraved one creed into every line of the Bolide: <b>every technical consideration has been translated directly into an aesthetic design.</b></p>
-      <p>Under hard braking the nose drops, the front splitter closes on the ground and downforce rises — yet the engineers deliberately cap the front axle's downforce to preserve aero balance. Air curtains ahead of the front wheels guide the flow around the car; winglets on the splitter's edges create vortices that feed the diffuser. Side intercoolers sit in deep intakes to hold the engine at its optimum temperature.</p>
-      <p>Even the mirrors were argued over: Bugatti chose physical mirrors over cameras, because <b>drivers judge distances faster</b>. It is a detail only a racing driver would care about — and the Bolide cares.</p>
-      <p>The rear wing adapts to each circuit's character, balancing downforce against drag. Aerodynamic development of this kind usually exists only at the top level of motorsport. Here, it serves forty owners.</p>
-    </div>
-    <div class="prose reveal">
-      <p class="lead">Two signatures define its face.</p>
-      <p><b>The horseshoe grille</b> — 115 years of Bugatti DNA, here carrying both structure and aero function. And <b>the X</b> — the signature Bugatti took from the X-planes of aviation history, visible from every perspective: X-shaped taillights framing the central exhaust, running from the nose through the cockpit to the seats.</p>
-      <p>It all begins with the design studio's sketches. These archival drawings — Frank Heyl's aerodynamic analysis, Aldo Sica's interior vision, Artur Hindalong's top-view layout — still mark where every technical decision landed.</p>
-      <p>They are the Bolide's "design specification": <b>no line was drawn for fun.</b></p>
+<!-- ============ 04 PERFORMANCE ============ -->
+<div class="chapter-break chapter-break--dark reveal" id="ch04">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">04</span>
+    <div>
+      <h2>The Numbers<span class="latin">Measured on the Track</span></h2>
+      <p>When the engine, the body and the aerodynamics are wound to their limits, these are the numbers that remain.</p>
+      <span class="chapter-break__meta">Official Specification — Track Verified</span>
     </div>
   </div>
+</div>
 
-  <figure class="fig fig--sketch reveal">
-    <div class="fig__media">
-      <img src="assets/doc03-aero-sketch.webp" alt="Frank Heyl aero sketch" loading="lazy" width="1800" height="1013">
-      <span class="fig__no"><i>FIG.</i> 04</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.04</span>
-      <span class="en">Form follows performance: Sketch technical description Aerodynamik — Frank Heyl, Bugatti Design.</span>
-    </figcaption>
-  </figure>
-
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/sketch-topview.webp" alt="Top view sketch" loading="lazy" width="1800" height="1013">
-        <span class="fig__no"><i>FIG.</i> 05</span>
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="perf reveal">
+      <div class="perf__group">
+        <h3>Acceleration</h3>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">0 – 100 km/h</span><span class="val">2.2 s<small>44 m</small></span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:19%;"></div><div class="perf__mark" style="left:19%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>50</span><span>100 km/h</span></div>
+        </div>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">0 – 200 km/h</span><span class="val">5.4 s<small>180 m</small></span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:47%;"></div><div class="perf__mark" style="left:47%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>100</span><span>200 km/h</span></div>
+        </div>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">0 – 300 km/h</span><span class="val">11.5 s<small>604 m</small></span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:79%;"></div><div class="perf__mark" style="left:79%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>150</span><span>300 km/h</span></div>
+        </div>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">Top Speed</span><span class="val">380 km/h</span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:100%;"></div><div class="perf__mark" style="left:100%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>190</span><span>380 km/h</span></div>
+        </div>
       </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.05</span>
-        <span class="en">Design sketch Bugatti Bolide top view — Artur Hindalong, Bugatti Design.</span>
+      <div class="perf__group">
+        <h3>Braking</h3>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">100 – 0 km/h</span><span class="val">30 m</span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:13%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>15</span><span>30 m</span></div>
+        </div>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">200 – 0 km/h</span><span class="val">105 m</span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:46%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>50</span><span>105 m</span></div>
+        </div>
+        <div class="perf__bar">
+          <div class="perf__bar-top"><span class="lbl">300 – 0 km/h</span><span class="val">228 m</span></div>
+          <div class="perf__track"><div class="perf__fill" style="--w:100%;"></div></div>
+          <div class="perf__scale"><span>0</span><span>114</span><span>228 m</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale2 reveal">
+      <div class="scale2__col">
+        <span class="lbl">Dry Weight</span>
+        <span class="num">1,450<small>KG</small></span>
+        <div class="scale2__track"><div class="scale2__fill scale2__fill--self" style="--w:48%;"></div></div>
+        <span class="scale2__note">The weight of the car</span>
+      </div>
+      <div class="scale2__col">
+        <span class="lbl">Maximum Downforce</span>
+        <span class="num">≈3,000<small>KG</small></span>
+        <div class="scale2__track"><div class="scale2__fill scale2__fill--down" style="--w:100%;"></div></div>
+        <span class="scale2__note">The weight the air presses onto the car — <b>twice its own mass</b></span>
+      </div>
+    </div>
+
+    <div class="inline-quote reveal">
+      <p>In a corner, this 1,450 kg car is pressed onto the asphalt by the air — <b>its weight grows "backwards."</b> Under braking, the front splitter closes on the ground and downforce tracks speed and load in real time. It is also the secret of its drivability: months of work went into tuning the aero balance so that it is both ferocious and manageable.</p>
+    </div>
+
+    <div class="specs reveal">
+      <div class="specs__group">
+        <h3>General</h3>
+        <div class="specs__row"><span class="k">Length</span><span class="v">4,835<span class="unit">mm</span></span></div>
+        <div class="specs__row"><span class="k">Width (with mirrors)</span><span class="v">2,100 (2,400)<span class="unit">mm</span></span></div>
+        <div class="specs__row"><span class="k">Height</span><span class="v">1,047<span class="unit">mm</span></span></div>
+        <div class="specs__row"><span class="k">Wheelbase</span><span class="v">2,750<span class="unit">mm</span></span></div>
+        <div class="specs__row specs__row--hl"><span class="k">Dry weight</span><span class="v">1,450<span class="unit">kg</span></span></div>
+      </div>
+      <div class="specs__group">
+        <h3>Powertrain</h3>
+        <div class="specs__row"><span class="k">Engine</span><span class="v">W16 · Quad turbo</span></div>
+        <div class="specs__row"><span class="k">Displacement</span><span class="v">7,993<span class="unit">cm³</span></span></div>
+        <div class="specs__row specs__row--hl"><span class="k">Power</span><span class="v">1,600 hp @ 7,050 rpm</span></div>
+        <div class="specs__row specs__row--hl"><span class="k">Torque</span><span class="v">1,600<span class="unit">Nm</span></span></div>
+        <div class="specs__row"><span class="k">Transmission</span><span class="v">7-speed DSG</span></div>
+        <div class="specs__row"><span class="k">Drive</span><span class="v">All-wheel drive</span></div>
+        <div class="specs__row specs__row--hl"><span class="k">Weight-to-power</span><span class="v">0.91<span class="unit">kg/hp</span></span></div>
+      </div>
+      <div class="specs__group">
+        <h3>Chassis</h3>
+        <div class="specs__row"><span class="k">Front suspension</span><span class="v">Double wishbone · pushrod</span></div>
+        <div class="specs__row"><span class="k">Rear suspension</span><span class="v">Double wishbone · direct</span></div>
+        <div class="specs__row"><span class="k">Front tires</span><span class="v">Michelin 30/68-18</span></div>
+        <div class="specs__row"><span class="k">Rear tires</span><span class="v">Michelin 34/71-18</span></div>
+        <div class="specs__row"><span class="k">Wheels</span><span class="v">BBS forged 18″</span></div>
+      </div>
+      <div class="specs__group">
+        <h3>Brakes</h3>
+        <div class="specs__row"><span class="k">Discs</span><span class="v">Carbon-carbon 390<span class="unit">mm</span></span></div>
+        <div class="specs__row"><span class="k">Pistons</span><span class="v">Front 8 · Rear 6</span></div>
+        <div class="specs__row"><span class="k">cW×A high downforce</span><span class="v">1.30</span></div>
+        <div class="specs__row"><span class="k">cW×A top speed</span><span class="v">1.22</span></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="text-align:center;">
+      <a class="btn" href="assets/specs-en.pdf" download="technical-specifications-bugatti-bolide-en.pdf">Technical Specifications (PDF)</a>
+    </div>
+
+    <figure class="figure reveal">
+      <div class="figure__media">
+        <img src="assets/doc02-numbers.webp" alt="Bolide figures" loading="lazy" width="2000" height="1334">
+      </div>
+      <figcaption class="figure__cap">
+        <span class="no">07</span>
+        <span class="en">1,600 PS and a dry weight of only 1,450 kg — an unprecedented weight-to-power ratio.</span>
       </figcaption>
     </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc03-details.webp" alt="Bolide details" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 06</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.06</span>
-        <span class="en">Attention to detail at the highest level. The sharp edges, the complex aerodynamics and the interplay of light and shadow make the Bolide a sculptural masterpiece.</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <div class="quote reveal">
-    <blockquote>Design and technology flow into one another in the Bolide. Every technical consideration has been translated directly into an aesthetic design.</blockquote>
-    <figcaption><b>Frank Heyl</b> — Deputy Design Director, Bugatti</figcaption>
-  </div>
-
-  <figure class="fig fig--tall reveal">
-    <div class="fig__media">
-      <img src="assets/doc03-splitter.webp" alt="Bolide front splitter" loading="lazy" width="1800" height="1200">
-      <span class="fig__no"><i>FIG.</i> 07</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.07</span>
-      <span class="en">The front splitter on the Bugatti Bolide is one of the most important aerodynamic elements, ensuring optimal driving performance on the racetrack.</span>
-    </figcaption>
-  </figure>
-
-  <figure class="fig fig--left reveal">
-    <div class="fig__media">
-      <img src="assets/doc03-rearwing.webp" alt="Bolide rear wing" loading="lazy" width="1800" height="1200">
-      <span class="fig__no"><i>FIG.</i> 08</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.08</span>
-      <span class="en">The precise engineering of the Bolide's rear wing allows it to adapt to the characteristics of each racetrack.</span>
-    </figcaption>
-  </figure>
-</section>
-
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= DOC.03 ENGINEERING ================= -->
-<section class="doc" id="doc03">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.03</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">8.0 L — QUAD TURBO — FIA LMH/LMDH</span>
-    </div>
-    <h2>Engineering<span class="latin">THE W16, UNLEASHED</span></h2>
-  </header>
-
-  <div class="story2">
-    <div class="prose reveal">
-      <p class="lead">The W16 — the heart of every road-going Bugatti for twenty years — is pushed to its final form in the Bolide. <b>Race track optimization means recalculating everything.</b></p>
-      <p>Turbochargers and lubrication systems were redesigned to withstand higher temperatures and forces; intake and exhaust were de-throttled for faster response and a new W16 symphony. The engine sits in a newly developed carbon monocoque, positioned <b>60 mm further forward</b> than in the Chiron — packaging built for the track.</p>
-      <p>The monocoque was developed to the demanding FIA LMH/LMDh requirements — the same standards as Le Mans prototypes — using a super-high-strength carbon material, the highest performing of its type in the world. Wall thickness, structure, material: every parameter was recalculated. Safety is not an add-on; <b>it is part of the engineering.</b></p>
-    </div>
-    <div class="prose reveal">
-      <p class="lead">The manufacturing is archival-grade, too.</p>
-      <p>A 3D-printed titanium pushrod weighs just <b>100 grams</b> and transmits forces up to <b>3.5 tonnes</b> — precision as fine as 0.1 mm. The X-shaped bracket in the cockpit, 3D-printed in aluminum, weighs <b>300 grams</b> and withstands loads beyond <b>700 kg</b>.</p>
-      <p>The brake system was developed with Brembo: carbon-carbon 390 mm discs on par with Formula 1 and LMh machinery, and the <b>largest caliper Brembo has ever fitted to a racing car</b>, with 8 front pistons and dedicated cooling ducts.</p>
-      <p>Before any Bolide meets its owner, it passes a final inspection and circuit testing program at Mirecourt — the first time Bugatti built its own quality process for a car with no benchmark.</p>
-    </div>
-  </div>
-
-  <!-- 官网三大章节语汇 -->
-  <div class="cards3 reveal">
-    <div><span class="no">RACING PEDIGREE</span><h3>Born for the track</h3><p>An ultra-lightweight design built around this legendary engine, tested from virtual simulation to real circuits.</p></div>
-    <div><span class="no">W16 POWER UNLEASHED</span><h3>The W16, unleashed</h3><p>Turbochargers and lubrication redesigned to withstand higher temperatures and forces — every track detail recalculated.</p></div>
-    <div><span class="no">NEW SOUNDTRACK</span><h3>A new soundtrack</h3><p>Intake and exhaust de-throttled for faster response — a new W16 symphony on every lap.</p></div>
-  </div>
-
-  <!-- W16 explorer -->
-  <div class="explorer reveal" id="explorer">
-    <div class="explorer__img">
-      <img src="assets/doc04-drivetrain.webp" alt="Bolide drivetrain technical illustration" loading="lazy" width="1800" height="1013">
-      <span class="explorer__hint">Hover to explore ✕</span>
-      <div class="hotspot" style="left:17%;top:56%;" data-h="0">
-        <div class="hotspot__label"><b>Carbon-Carbon brakes</b><small>390 mm discs · 8-piston front caliper<br>on par with F1 / LMh machinery</small></div>
-      </div>
-      <div class="hotspot" style="left:30%;top:44%;" data-h="1">
-        <div class="hotspot__label"><b>Push-rod suspension</b><small>Double wishbone · lying spring/damper<br>LMP1 prototype architecture</small></div>
-      </div>
-      <div class="hotspot" style="left:52%;top:38%;" data-h="2">
-        <div class="hotspot__label"><b>W16 · 8.0 litre</b><small>1,600 hp @ 7,050 rpm · 1,600 Nm<br>7,993 cc · quad turbo</small></div>
-      </div>
-      <div class="hotspot" style="left:63%;top:56%;" data-h="3">
-        <div class="hotspot__label"><b>Quad turbo · track tuned</b><small>Lubrication & cooling redesigned<br>de-throttled intake & exhaust</small></div>
-      </div>
-      <div class="hotspot" style="left:76%;top:42%;" data-h="4">
-        <div class="hotspot__label"><b>7-speed DSG</b><small>Permanent AWD · front limited-slip<br>powertrain 60 mm forward vs Chiron</small></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="quote reveal">
-    <blockquote>To pass these stringent but critical safety tests, we needed to ensure that everything about the monocoque was technically perfect so that on the track the Bolide is a race car that is safe and secure in every driving situation and environment.</blockquote>
-    <figcaption><b>Christian Willmann</b> — Bugatti Chief Engineer, Bolide</figcaption>
-  </div>
-
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc04-brakes.webp" alt="Bolide carbon brakes" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 09</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.09</span>
-        <span class="en">The carbon-carbon brake system of the Bugatti Bolide is on par with the technology that goes into LMh/LMDh and Formula 1 machinery.</span>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc04-caliper.webp" alt="Brembo caliper" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 10</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.10</span>
-        <span class="en">The front caliper, the largest Brembo has ever fitted to a racing car, is a masterpiece of engineering.</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <figure class="fig fig--tall reveal">
-    <div class="fig__media">
-      <img src="assets/doc04-monocoque.webp" alt="Bolide monocoque" loading="lazy" width="1800" height="1013">
-      <span class="fig__no"><i>FIG.</i> 11</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.11</span>
-      <span class="en">The new monocoque enables the peerless W16 powertrain to be positioned 60mm further forward than in the Chiron, ensuring an ideal packaging for track use.</span>
-    </figcaption>
-  </figure>
-
-  <div class="quote reveal">
-    <blockquote>For a car so extreme that there really was currently no benchmark for it. So, we developed our own, accepting nothing less than perfection.</blockquote>
-    <figcaption><b>Philippe Grand</b> — Director of Quality, Bugatti</figcaption>
   </div>
 </section>
 
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= DOC.04 PERFORMANCE ================= -->
-<section class="doc" id="doc04">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.04</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">MEASURED ON THE TRACK — 2024</span>
+<!-- ============ 05 THE COCKPIT ============ -->
+<div class="chapter-break reveal" id="ch05">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">05</span>
+    <div>
+      <h2>Reduced to Driving<span class="latin">The Cockpit</span></h2>
+      <p>The cockpit draws its inspiration from LMP1 prototypes — everything unrelated to driving was asked to leave.</p>
+      <span class="chapter-break__meta">Monocoque — LMP1 Inspired</span>
     </div>
-    <h2>Performance<span class="latin">THE NUMBERS</span></h2>
-  </header>
-
-  <div class="prose reveal">
-    <p class="lead">When the engine, the body and the aerodynamics are wound to their limits, these are the numbers that remain. Every figure below comes from the official specification sheet and track testing.</p>
   </div>
+</div>
 
-  <!-- Acceleration bars -->
-  <div class="perf reveal">
-    <div class="perf__group">
-      <h3>ACCELERATION</h3>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">0 – 100 km/h</span><span class="val">2.2 s<small>44 m</small></span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:19%;"></div><div class="perf__mark" style="left:19%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>50</span><span>100 km/h</span></div>
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="split">
+      <div class="prose reveal">
+        <p class="lead">The wraparound cockpit keeps only the wheel, the pedals, one essential screen, and the driver.</p>
+        <p>This is not "track-style luxury." It is <b>restraint in service of driving</b> — every material, every stitch exists so the driver forgets the interior exists, and remembers only the car.</p>
+        <p>Even entering the cockpit was designed with care: the outer sections of the wraparound headrest fold away, letting the driver settle into the seat with composure.</p>
       </div>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">0 – 200 km/h</span><span class="val">5.4 s<small>180 m</small></span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:47%;"></div><div class="perf__mark" style="left:47%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>100</span><span>200 km/h</span></div>
-      </div>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">0 – 300 km/h</span><span class="val">11.5 s<small>604 m</small></span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:79%;"></div><div class="perf__mark" style="left:79%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>150</span><span>300 km/h</span></div>
-      </div>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">TOP SPEED</span><span class="val">380 km/h</span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:100%;"></div><div class="perf__mark" style="left:100%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>190</span><span>380 km/h</span></div>
-      </div>
-    </div>
-    <div class="perf__group">
-      <h3>BRAKING</h3>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">100 – 0 km/h</span><span class="val">30 m</span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:13%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>15</span><span>30 m</span></div>
-      </div>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">200 – 0 km/h</span><span class="val">105 m</span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:46%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>50</span><span>105 m</span></div>
-      </div>
-      <div class="perf__bar">
-        <div class="perf__bar-top"><span class="lbl">300 – 0 km/h</span><span class="val">228 m</span></div>
-        <div class="perf__track"><div class="perf__fill" style="--w:100%;"></div></div>
-        <div class="perf__scale"><span>0</span><span>114</span><span>228 m</span></div>
+      <div class="prose reveal">
+        <p class="lead">The X continues in here.</p>
+        <p>The cockpit melds around the same daring X as the rear: seats, headrest brackets, door structures. The 3D-printed X bracket weighs <b>300 grams</b> and carries more than <b>700 kg</b>.</p>
+        <p>The wheel's feel in a corner, the seat's support at 2.5 G, the headrest's deformation in a crash — the FIA LMH/LMDh safety standard was translated into details the driver will never see.</p>
       </div>
     </div>
   </div>
 
-  <!-- G-force cards -->
-  <div class="gcard reveal">
-    <div class="g--hl"><b>2.5<small>G</small></b><span>LATERAL</span></div>
-    <div><b>+1.5<small>G</small></b><span>LONGITUDINAL · ACCEL</span></div>
-    <div><b>−2.5<small>G</small></b><span>LONGITUDINAL · BRAKE</span></div>
-  </div>
-
-  <!-- Downforce scale -->
-  <div class="scale2 reveal">
-    <div class="scale2__col">
-      <span class="lbl">DRY WEIGHT</span>
-      <span class="num">1,450<small>KG</small></span>
-      <div class="scale2__track"><div class="scale2__fill scale2__fill--self" style="--w:48%;"></div></div>
-      <span class="scale2__note">the car's own weight</span>
-    </div>
-    <div class="scale2__col">
-      <span class="lbl">MAXIMUM DOWNFORCE</span>
-      <span class="num" style="color:var(--accent-bright);">≈3,000<small>KG</small></span>
-      <div class="scale2__track"><div class="scale2__fill scale2__fill--down" style="--w:100%;"></div></div>
-      <span class="scale2__note">weight the air presses down — <b>twice the car itself</b></span>
-    </div>
-  </div>
-
-  <div class="prose reveal">
-    <p>What does nearly three tons of downforce mean? In a corner, this 1,450 kg car is pressed onto the asphalt by the air — <b>its weight grows "backwards."</b> Under braking, the front splitter closes on the ground and downforce tracks speed and load in real time. It is also the secret of its drivability: months of work went into tuning the aero balance so that it is both ferocious and manageable.</p>
-  </div>
-
-  <!-- Spec table -->
-  <div class="specs reveal">
-    <div class="specs__group">
-      <h3>GENERAL</h3>
-      <div class="specs__row"><span class="k">Length</span><span class="v">4,835<span class="unit">mm</span></span></div>
-      <div class="specs__row"><span class="k">Width (incl. mirrors)</span><span class="v">2,100 (2,400)<span class="unit">mm</span></span></div>
-      <div class="specs__row"><span class="k">Height</span><span class="v">1,047<span class="unit">mm</span></span></div>
-      <div class="specs__row"><span class="k">Wheelbase</span><span class="v">2,750<span class="unit">mm</span></span></div>
-      <div class="specs__row specs__row--hl"><span class="k">Dry weight</span><span class="v">1,450<span class="unit">kg</span></span></div>
-    </div>
-    <div class="specs__group">
-      <h3>POWERTRAIN</h3>
-      <div class="specs__row"><span class="k">Engine</span><span class="v">W16 · quad turbo</span></div>
-      <div class="specs__row"><span class="k">Displacement</span><span class="v">7,993<span class="unit">cm³</span></span></div>
-      <div class="specs__row specs__row--hl"><span class="k">Power output</span><span class="v">1,600 hp @ 7,050 rpm</span></div>
-      <div class="specs__row specs__row--hl"><span class="k">Maximum torque</span><span class="v">1,600<span class="unit">Nm</span></span></div>
-      <div class="specs__row"><span class="k">Transmission</span><span class="v">7-speed DSG</span></div>
-      <div class="specs__row"><span class="k">Drive system</span><span class="v">Permanent AWD</span></div>
-      <div class="specs__row"><span class="k">Weight-to-power</span><span class="v">0.91<span class="unit">kg/hp</span></span></div>
-    </div>
-    <div class="specs__group">
-      <h3>CHASSIS</h3>
-      <div class="specs__row"><span class="k">Front suspension</span><span class="v">Double wishbone · push-rod</span></div>
-      <div class="specs__row"><span class="k">Rear suspension</span><span class="v">Double wishbone · direct</span></div>
-      <div class="specs__row"><span class="k">Front tires</span><span class="v">Michelin 30/68-18</span></div>
-      <div class="specs__row"><span class="k">Rear tires</span><span class="v">Michelin 34/71-18</span></div>
-      <div class="specs__row"><span class="k">Wheels</span><span class="v">BBS forged 18″</span></div>
-    </div>
-    <div class="specs__group">
-      <h3>BRAKES & AERO</h3>
-      <div class="specs__row"><span class="k">Brake discs</span><span class="v">Carbon-Carbon 390<span class="unit">mm</span></span></div>
-      <div class="specs__row"><span class="k">Pistons per caliper</span><span class="v">8 front · 6 rear</span></div>
-      <div class="specs__row"><span class="k">cW×A high downforce</span><span class="v">1.30</span></div>
-      <div class="specs__row"><span class="k">cW×A high speed</span><span class="v">1.22</span></div>
-    </div>
-  </div>
-
-  <figure class="fig reveal">
-    <div class="fig__media">
-      <img src="assets/doc02-numbers.webp" alt="Bolide numbers" loading="lazy" width="2000" height="1334">
-      <span class="fig__no"><i>FIG.</i> 12</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.12</span>
-      <span class="en">The Bugatti Bolide delivers 1,600 PS and has a dry weight of only 1,450 kg, in the process achieving an unprecedented weight-to-power ratio.</span>
-    </figcaption>
-  </figure>
-
-  <a class="btn reveal" href="assets/specs-en.pdf" download="technical-specifications-bugatti-bolide-en.pdf"><span class="bx">✕</span> Full specification sheet (PDF)</a>
-</section>
-
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= DOC.05 THE COCKPIT ================= -->
-<section class="doc" id="doc05">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.05</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">MONOCOQUE — LMP1 INSPIRED</span>
-    </div>
-    <h2>The Cockpit<span class="latin">THE COCKPIT</span></h2>
-  </header>
-
-  <div class="story2">
-    <div class="prose reveal">
-      <p class="lead">The cockpit draws its inspiration from LMP1 prototypes: <b>reduced to driving.</b></p>
-      <p>Everything unrelated to driving was asked to leave — the wheel, the pedals, one essential screen, and the driver. The seats carry the X-theme in multi-pad stitching; at rest, the steering wheel becomes a piece of sculpture.</p>
-      <p>Even entering and leaving the cockpit was designed with care: the outer sections of the wraparound headrest fold away, letting the driver settle into the seat with composure. This is not "track-style luxury." It is <b>restraint in service of driving</b> — every material, every stitch exists so the driver forgets the interior exists, and remembers only the car.</p>
-    </div>
-    <div class="prose reveal">
-      <p class="lead">The X continues in here.</p>
-      <p>The cockpit melds around the same daring X as the rear: seats, headrest brackets, door structures. The 3D-printed X bracket weighs 300 grams and carries more than 700 kg.</p>
-      <p>Every object in the cabin went through the same argument: the wheel's feel in a corner, the seat's support at 2.5 G, the headrest's deformation in a crash. The FIA LMH/LMDh safety standard was translated into details the driver will never see — and will never need to think about.</p>
-    </div>
-  </div>
-
-  <figure class="fig fig--full reveal">
-    <div class="fig__media">
+  <figure class="figure figure--full reveal">
+    <div class="figure__media">
       <img src="assets/doc05-driversview.webp" alt="Driver's perspective" loading="lazy" width="2000" height="1125">
-      <span class="fig__no"><i>FIG.</i> 13</span>
     </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.13</span>
-      <span class="en">Bugatti Bolide interior from the driver's perspective.</span>
+    <figcaption class="figure__cap" style="max-width:var(--w-doc);margin-left:auto;margin-right:auto;padding:0 clamp(1.5rem,5vw,4rem);">
+      <span class="no">08</span>
+      <span class="en">Interior from the driver's perspective.</span>
     </figcaption>
   </figure>
 
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc05-cockpit.webp" alt="X theme cockpit" loading="lazy" width="1800" height="1013">
-        <span class="fig__no"><i>FIG.</i> 14</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.14</span>
-        <span class="en">Bolide's cockpit melds elegantly around the same daring 'X-theme' design as the rear of the hyper sports car.</span>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc05-seat-x.webp" alt="X theme seat" loading="lazy" width="1800" height="1013">
-        <span class="fig__no"><i>FIG.</i> 15</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.15</span>
-        <span class="en">The Bolide's seats are immersed in a striking 'X-theme' treatment that is embedded within the multi-pad-design of the seats.</span>
-      </figcaption>
-    </figure>
+  <div class="chapter__inner">
+    <div class="figrow reveal">
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc05-cockpit.webp" alt="X-theme cockpit" loading="lazy" width="1800" height="1013">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">09</span>
+          <span class="en">The cockpit melds elegantly around the same daring 'X-theme' design.</span>
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc05-seat-x.webp" alt="X-theme seats" loading="lazy" width="1800" height="1013">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">10</span>
+          <span class="en">The seats are immersed in a striking 'X-theme' treatment.</span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
-
-  <figure class="fig fig--sketch reveal">
-    <div class="fig__media">
-      <img src="assets/doc05-interior-sketch.webp" alt="Aldo Sica interior sketch" loading="lazy" width="1800" height="1013">
-      <span class="fig__no"><i>FIG.</i> 16</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.16</span>
-      <span class="en">Sketch Bolide interior — Aldo Sica, Bugatti Design.</span>
-    </figcaption>
-  </figure>
 </section>
 
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- Track video banner -->
+<!-- ============ VIDEO STRIP ============ -->
 <div class="videostrip reveal">
   <video autoplay muted loop playsinline preload="metadata" poster="assets/doc06-birdseye.webp">
     <source src="assets/web/moodcut.mp4" type="video/mp4">
   </video>
   <div class="videostrip__veil"></div>
   <div class="videostrip__inner">
-    <span class="videostrip__meta">ON TRACK — 2023 → 2026</span>
+    <span class="videostrip__meta">On Track — 2023 → 2026</span>
     <h2>The track is its only home</h2>
     <p>From high-speed testing at the Nürburgring to eight Bolides at dawn in Miami — a life written on asphalt.</p>
   </div>
 </div>
 
-<!-- ================= DOC.06 TRACK CHRONICLE ================= -->
-<section class="doc" id="doc06">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.06</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">2023 → 2026 — CIRCUITS OF THE WORLD</span>
+<!-- ============ 06 TRACK CHRONICLE ============ -->
+<div class="chapter-break reveal" id="ch06">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">06</span>
+    <div>
+      <h2>A Life Written on Asphalt<span class="latin">Track Chronicle</span></h2>
+      <p>From the Le Mans centenary to its owners' first full throttle — this is the trail it left behind.</p>
+      <span class="chapter-break__meta">Circuits of the World — 2023 → 2026</span>
     </div>
-    <h2>Track Chronicle<span class="latin">TRACK CHRONICLE</span></h2>
-  </header>
-
-  <div class="prose reveal">
-    <p class="lead">The Bolide's whole life was written on circuits — from the Le Mans centenary to its owners' first full throttle. <b>This is the trail it left behind.</b></p>
   </div>
+</div>
 
-  <div class="timeline reveal">
-    <div class="tl-item">
-      <div class="tl-item__date">2023 · 04 — NEXT PHASE</div>
-      <h3>The prototype enters the next phase of testing</h3>
-      <p>Two and a half years earlier, the Bolide was an online film from autumn 2020. Now the prototype began high-intensity development testing on real circuits — after countless simulated laps, it was the asphalt's turn to speak.</p>
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-item__date">2023 · 04 — Next Phase</div>
+        <div><h3>The prototype enters the next phase of testing</h3><p>Two and a half years earlier, the Bolide was an online film from autumn 2020. Now the prototype began high-intensity development testing on real circuits — after countless simulated laps, it was the asphalt's turn to speak.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2023 · 06 — Le Mans</div>
+        <div><h3>Public dynamic debut at the centenary</h3><p>At the 100th anniversary of the 24 Hours of Le Mans, the Bolide made its first public dynamic appearance. Behind the wheel: Andy Wallace — Le Mans winner, Bugatti Pilote Officiel.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2023 · 07 — Goodwood</div>
+        <div><h3>Hillclimb debut at Goodwood</h3><p>At the Festival of Speed, the Bolide roared up the famous hillclimb. For the first time, spectators heard the W16 fully unleashed.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2024 · 08 — Laguna Seca</div>
+        <div><h3>Type 35 centenary edition × Laguna Seca</h3><p>At Monterey Car Week, the centenary-edition Bolide shared the asphalt with the Type 35 that inspired it — a century after the Type 35's first race. One blue, one black, two timelines reunited on the hills of Laguna Seca.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-item__date">2025 · 03 — Paul Ricard</div>
+        <div><h3>Inaugural 'Feeling The Track'</h3><p>The first owner track event took place at Circuit Paul Ricard. The same day, Bugatti unveiled Équipe Pur Sang — a dedicated Bolide liveried in Bugatti's racing colors.</p></div>
+      </div>
     </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2023 · 06 — LE MANS</div>
-      <h3>Le Mans centenary: public dynamic debut</h3>
-      <p>At the 100th anniversary of the 24 Hours of Le Mans, the Bolide made its first public dynamic appearance. Behind the wheel: Andy Wallace — Le Mans winner, Bugatti Pilote Officiel — on a track steeped in history.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2023 · 07 — GOODWOOD</div>
-      <h3>Goodwood Festival of Speed debut</h3>
-      <p>At Goodwood, the Bolide roared up the famous hillclimb. For the first time, spectators heard the W16 fully unleashed.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2023 · 09 — NÜRBURGRING</div>
-      <h3>High-speed testing at the Nürburgring</h3>
-      <p>Final aerodynamic validation at high speed on the Nürburgring — the last calibration before production sign-off.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2024 · 03 — ANDY WALLACE</div>
-      <h3>When a legend meets its destiny</h3>
-      <p>Le Mans, Daytona, Sebring — one of the few Triple Crown winners in racing history. Andy Wallace's verdict on the Bolide was direct: this car lets both gentleman and professional drivers approach their limits. That was the brief from day one.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2024 · 08 — LAGUNA SECA</div>
-      <h3>Type 35 centenary edition × Laguna Seca</h3>
-      <p>At Monterey Car Week, the 100-year anniversary Bolide shared the asphalt with the car that inspired it — a century after the Type 35's first race. One blue, one black: two timelines reunited on the hills of Laguna Seca.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2025 · 01 — COTA</div>
-      <h3>The first owner to hit the track</h3>
-      <p>A US owner took his freshly delivered Bolide to the Circuit of the Americas — a Christmas gift to himself. It rained that day. The look on his face when he returned to the pits said everything.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2025 · 03 — PAUL RICARD</div>
-      <h3>"Feeling The Track" — the first official event</h3>
-      <p>The inaugural customer drive event at Circuit Paul Ricard, multiple Bolides unleashed together. The same day, Bugatti introduced Équipe Pur Sang — a one-off Bolide finished in tribute to the marque's racing DNA.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-item__date">2026 · 03 — MIAMI</div>
-      <h3>Miami: eight Bolides together</h3>
-      <p>The largest gathering so far. At first light, eight meteorites lined up in the pit lane of the Miami International Autodrome — the W16's roar was the only language spoken.</p>
+
+    <div class="quote reveal">
+      <blockquote>This was the moment we had all been working toward — witnessing multiple Bolide examples unleashed on the track together.</blockquote>
+      <figcaption><b>Hendrik Malinowski</b> — Managing Director, Bugatti</figcaption>
     </div>
   </div>
 
-  <div class="quote reveal">
-    <blockquote>This was the moment we had all been working toward — witnessing multiple Bolide examples unleashed on the track together.</blockquote>
-    <figcaption><b>Hendrik Malinowski</b> — Managing Director, Bugatti</figcaption>
-  </div>
-
-  <figure class="fig fig--full reveal">
-    <div class="fig__media">
+  <figure class="figure figure--full reveal">
+    <div class="figure__media">
       <img src="assets/doc06-birdseye.webp" alt="Four Bolides bird's eye" loading="lazy" width="2000" height="1334">
-      <span class="fig__no"><i>FIG.</i> 17</span>
     </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.17</span>
-      <span class="en">A bird's eye view — a vision of excellence. Four Bolide racing cars, four individual masterpieces, each one embodying the perfection that Bugatti has stood for for over a century.</span>
+    <figcaption class="figure__cap" style="max-width:var(--w-doc);margin-left:auto;margin-right:auto;padding:0 clamp(1.5rem,5vw,4rem);">
+      <span class="no">11</span>
+      <span class="en">A bird's eye view — four Bolide racing cars, four individual masterpieces.</span>
     </figcaption>
   </figure>
 
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc06-pursang.webp" alt="Équipe Pur Sang" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 18</span>
+  <div class="chapter__inner">
+    <div class="webcard reveal">
+      <div class="webcard__media">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/doc06-lemans.webp">
+          <source src="assets/web/cota.mp4" type="video/mp4">
+        </video>
+        <span class="tag">FIRST DELIVERY — COTA</span>
       </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.18</span>
-        <span class="en">The colors of the 'Équipe Pur Sang' — a tribute to Bugatti's racing DNA.</span>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc06-type35.webp" alt="Type 35 and centenary Bolide" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 19</span>
+      <div class="webcard__body">
+        <span class="no">2025 · 01</span>
+        <h3>The first owner, on the Circuit of the Americas, in the rain</h3>
+        <p>An American owner drove his freshly delivered Bolide at COTA — a Christmas gift to himself. It rained that day. His expression when he returned to the pits said everything: <b>"Incredibly easy to handle. The surge of power is incomparable."</b></p>
       </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.19</span>
-        <span class="en">The Bugatti Type 35T Grand Prix and the 100th anniversary-edition Bolide shared the asphalt of the legendary Laguna Seca circuit at Monterey Car Week 2024.</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <div class="figrow reveal">
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc06-lemans.webp" alt="Le Mans centenary debut" loading="lazy" width="1800" height="1200">
-        <span class="fig__no"><i>FIG.</i> 20</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.20</span>
-        <span class="en">Last year, the Bugatti Bolide made its public dynamic debut to mark the centenary of Le Mans 24 Hours.</span>
-      </figcaption>
-    </figure>
-    <figure class="fig">
-      <div class="fig__media">
-        <img src="assets/doc06-trio.webp" alt="Three generations of Bugatti" loading="lazy" width="1800" height="1013">
-        <span class="fig__no"><i>FIG.</i> 21</span>
-      </div>
-      <figcaption class="fig__cap">
-        <span class="fig__tag">FIG.21</span>
-        <span class="en">Driving shot of the Bugatti Bolide with EB 110 LM and Bugatti Type 57 G Tank.</span>
-      </figcaption>
-    </figure>
-  </div>
-
-  <figure class="fig fig--tall reveal">
-    <div class="fig__media">
-      <img src="assets/doc06-paulricard.webp" alt="Paul Ricard sighting lap" loading="lazy" width="1800" height="1200">
-      <span class="fig__no"><i>FIG.</i> 22</span>
     </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.22</span>
-      <span class="en">On a sighting lap. Bolide customers experience the legendary Circuit Paul Ricard in their own hyper sports cars during the 'Feeling The Track' event.</span>
-    </figcaption>
-  </figure>
+
+    <div class="figrow reveal">
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc06-pursang.webp" alt="Équipe Pur Sang" loading="lazy" width="1800" height="1200">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">12</span>
+          <span class="en">The colors of the 'Équipe Pur Sang' — a tribute to Bugatti's racing DNA.</span>
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc06-type35.webp" alt="Type 35 and Bolide" loading="lazy" width="1800" height="1200">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">13</span>
+          <span class="en">The Type 35T Grand Prix and the 100th anniversary-edition Bolide at Laguna Seca.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="figrow reveal">
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc06-lemans.webp" alt="Le Mans debut" loading="lazy" width="1800" height="1200">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">14</span>
+          <span class="en">The public dynamic debut to mark the centenary of Le Mans 24 Hours.</span>
+        </figcaption>
+      </figure>
+      <figure class="figure">
+        <div class="figure__media">
+          <img src="assets/doc06-trio.webp" alt="Three generations" loading="lazy" width="1800" height="1013">
+        </div>
+        <figcaption class="figure__cap">
+          <span class="no">15</span>
+          <span class="en">The Bolide with EB 110 LM and Bugatti Type 57 G Tank.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="webcard webcard--flip reveal">
+      <div class="webcard__media">
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/doc06-paulricard.webp">
+          <source src="assets/web/miami.mp4" type="video/mp4">
+        </video>
+        <span class="tag">MIAMI — 2026</span>
+      </div>
+      <div class="webcard__body">
+        <span class="no">2026 · 03</span>
+        <h3>Miami: eight Bolides together</h3>
+        <p>The largest gathering of Bolides to date. At first light at the Miami International Autodrome, <b>eight meteorites</b> lined up in the F1 pit lane — the W16's roar the only language spoken. Professional coaching and motorsport-level technical support, tailored to every owner.</p>
+      </div>
+    </div>
+
+    <figure class="figure reveal">
+      <div class="figure__media">
+        <img src="assets/doc06-paulricard.webp" alt="Paul Ricard sighting lap" loading="lazy" width="1800" height="1200">
+      </div>
+      <figcaption class="figure__cap">
+        <span class="no">16</span>
+        <span class="en">On a sighting lap — Bolide customers experience Circuit Paul Ricard during 'Feeling The Track'.</span>
+      </figcaption>
+    </figure>
+  </div>
 </section>
 
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= DOC.07 LEGACY ================= -->
-<section class="doc" id="doc07">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">DOC.07</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">40 UNITS — MOLSHEIM ATELIER</span>
+<!-- ============ 07 LEGACY ============ -->
+<div class="chapter-break chapter-break--dark reveal" id="ch07">
+  <div class="chapter-break__inner">
+    <span class="chapter-break__no">07</span>
+    <div>
+      <h2>A Vision Becomes Legacy<span class="latin">40 Units — Molsheim Atelier</span></h2>
+      <p>In November 2025, the final Bolide was completed at the Molsheim Atelier.</p>
+      <span class="chapter-break__meta">Molsheim — 2020 → 2026</span>
     </div>
-    <h2>Legacy<span class="latin">A VISION BECOMES LEGACY</span></h2>
-  </header>
+  </div>
+</div>
 
-  <div class="story2">
-    <div class="prose reveal">
-      <p class="lead">November 2025. <b>The final Bolide was completed at the Molsheim Atelier.</b></p>
-      <p>Finished in French Racing Blue with Nocturne Black Carbon across the lower body — a customer's choice, a tribute to Bugatti's racing history. Its completion closed the project: from the online reveal of 2020 to the last delivery, the W16's purest form was concluded in 40 units.</p>
-      <p>As the Chiron cycle came to an end, the Bolide and W16 Mistral became the last Bugattis powered by the W16. After the Bolide, this twenty-year-old engine enters history — <b>in its most pure, most unsparing form.</b></p>
+<section class="chapter">
+  <div class="chapter__inner">
+    <div class="split">
+      <div class="prose reveal">
+        <p class="lead">Finished in iconic French Racing Blue with Nocturne accents, the last car was commissioned by its owner as <b>a tribute to Bugatti's racing history</b>.</p>
+        <p>Its completion closes the project: from the online reveal of 2020 to the final delivery, the W16's ultimate form ends with a run of 40.</p>
+        <p>With the end of the Chiron era, the Bolide and the W16 Mistral are the last Bugattis powered by the W16. After the Bolide, twenty years of this legendary engine enter history — <b>in its purest, most uncompromising form</b>.</p>
+      </div>
+      <div class="prose reveal">
+        <p class="lead">For the owners, the journey is just beginning.</p>
+        <p>A worldwide network of Certified Bolide Centers — from pre-delivery inspection to annual servicing — is staffed by technicians trained to exacting standards.</p>
+        <p>And the annual owner track events, from Paul Ricard to Miami, are becoming a new tradition. Racing dreams are fulfilled here, then turned into stories.</p>
+        <p style="margin-top:1.6em;">40 cars, 40 completely different stories. Their only common point: the night a car rolled out of the garage in Molsheim.</p>
+      </div>
     </div>
-    <div class="prose reveal">
-      <p class="lead">For the owners, the journey was just beginning.</p>
-      <p>A global network of Certified Bolide Centers supports the car — from pre-delivery inspection and personalized handover to annual servicing, all carried out by teams trained to motorsport standards. The service bar is set as high as the car itself.</p>
-      <p>And the annual track program for owners — from Paul Ricard to Miami — is becoming a tradition of its own. Racing dreams are fulfilled here, and then they become stories.</p>
-      <p style="margin-top:1.4em;">Forty cars. Forty entirely different stories. Their only common thread is that night when a car rolled out of the garage in Molsheim.</p>
+
+    <div class="quote reveal">
+      <blockquote>We set out to create a car that can perform on the racetrack yet also belongs in the world's finest collections.</blockquote>
+      <figcaption><b>Christophe Piochon</b> — President, Bugatti</figcaption>
     </div>
   </div>
 
-  <figure class="fig fig--full reveal">
-    <div class="fig__media">
+  <figure class="figure figure--full reveal">
+    <div class="figure__media">
       <img src="assets/doc07-final.webp" alt="The final Bolide" loading="lazy" width="2000" height="1334">
-      <span class="fig__no"><i>FIG.</i> 23</span>
     </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.23</span>
+    <figcaption class="figure__cap" style="max-width:var(--w-doc);margin-left:auto;margin-right:auto;padding:0 clamp(1.5rem,5vw,4rem);">
+      <span class="no">17</span>
       <span class="en">The final Bolide marks the end of a chapter for Bugatti.</span>
     </figcaption>
   </figure>
 
-  <div class="quote reveal">
-    <blockquote>The idea of being a perfect track car for both gentlemen and professional drivers is not so easy to translate into driving attributes, but it's essential to what makes it a Bugatti.</blockquote>
-    <figcaption><b>Emilio Scervo</b> — Chief Technology Officer, Bugatti</figcaption>
-  </div>
-
-  <div class="quote reveal">
-    <blockquote>We set out to create a car that can perform on the racetrack yet also belongs in the world's finest collections.</blockquote>
-    <figcaption><b>Christophe Piochon</b> — President, Bugatti Automobiles</figcaption>
-  </div>
-
-  <figure class="fig fig--tall reveal">
-    <div class="fig__media">
-      <img src="assets/doc07-frb.webp" alt="French Racing Blue final edition" loading="lazy" width="1800" height="1200">
-      <span class="fig__no"><i>FIG.</i> 24</span>
-    </div>
-    <figcaption class="fig__cap">
-      <span class="fig__tag">FIG.24</span>
-      <span class="en">Finished in iconic French Racing Blue and featuring bold Nocturne accents, including Nocturne Black Carbon across the lower portions of the car, the customer's Bolide is a testament to Bugatti's illustrious racing history.</span>
-    </figcaption>
-  </figure>
-</section>
-
-<div class="x-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4 L20 20 M20 4 L4 20"/></svg><span></span></div>
-
-<!-- ================= APPENDIX PRESS ARCHIVE ================= -->
-<section class="doc" id="archive">
-  <header class="doc-head reveal">
-    <div class="doc-head__meta">
-      <span class="doc-num">APPENDIX</span>
-      <span class="doc-line"></span>
-      <span class="doc-coord">29 PRESS RELEASES — 2020 → 2026</span>
-    </div>
-    <h2>Press Archive<span class="latin">PRESS ARCHIVE</span></h2>
-  </header>
-
-  <div class="prose reveal">
-    <p class="lead">The complete story of the Bolide, recorded in 29 press releases, grouped by theme. <b>Each entry distills the essentials; follow the title to read the full text.</b></p>
-  </div>
-
-  <div class="archive reveal is-open" id="archiveBox">
-    <div class="archive__head" id="archiveHead"><span>PRESS RELEASES — <b>29</b></span><span id="archiveToggle">COLLAPSE ▲</span></div>
-    <div class="archive__body">
-
-      <div class="argroup">
-        <h3>THE REVEAL · 2020</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-photo-release-the-bugatti-bolide-is-real" target="_blank" rel="noopener">
-          <span class="d">2020-12-08</span><span class="t">Photo release: The Bugatti Bolide is real</span>
-          <span class="sum">In under a year, from a blank sheet to a drivable car — designers and engineers validated extreme loads, acceleration and lap times virtually, then built it.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/a-virtual-drive-in-the-bugatti-bolide" target="_blank" rel="noopener">
-          <span class="d">2020-12-01</span><span class="t">A (virtual) drive in the Bugatti Bolide</span>
-          <span class="sum">Gamers drove the Bolide first: the car arrived in CSR Racing 2, letting the world press its throttle on a phone screen.</span>
-          <span class="g">Read full</span>
-        </a>
+  <div class="chapter__inner">
+    <figure class="figure reveal">
+      <div class="figure__media">
+        <img src="assets/doc07-frb.webp" alt="French Racing Blue" loading="lazy" width="1800" height="1200">
       </div>
-
-      <div class="argroup">
-        <h3>PRODUCTION · 2021</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-developing-production-version-of-the-bolide-experimental-hyper-sports-car" target="_blank" rel="noopener">
-          <span class="d">2021-08-13</span><span class="t">Developing the production version of the Bolide</span>
-          <span class="sum">At The Quail, Bugatti announced the Bolide would be produced — 40 units at a net price of four million euros each. Customer demand made the decision.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-chiron-super-sport-and-bolide-make-north-american-debut-at-monterey-car-week-2021" target="_blank" rel="noopener">
-          <span class="d">2021-08-17</span><span class="t">Chiron Super Sport and Bolide make North American debut</span>
-          <span class="sum">Two new hyper sports cars at The Quail — one for the road, one for the track.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-voted-the-most-beautiful-hyper-car-of-the-year" target="_blank" rel="noopener">
-          <span class="d">2021-01-26</span><span class="t">Bolide voted the most beautiful hypercar of the year</span>
-          <span class="sum">Among four finalists in Paris, the experimental machine from Molsheim won by a substantial margin.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-refines-3d-printing-perfection-with-accuracy-as-fine-as-0-1mm" target="_blank" rel="noopener">
-          <span class="d">2021-01-21</span><span class="t">3D printing perfection: accuracy as fine as 0.1mm</span>
-          <span class="sum">A 100-gram 3D-printed titanium pushrod that transmits 3.5 tonnes — "as fine as a spider's web, as stable as a steel structure."</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-      <div class="argroup">
-        <h3>RECOGNITION · 2022</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-wins-several-times-at-concorso-deleganza-with-the-best-of-show-award-the-fiva-trophyand-the-design-award" target="_blank" rel="noopener">
-          <span class="d">2022-05-23</span><span class="t">Bugatti wins at Concorso d'Eleganza</span>
-          <span class="sum">On the shores of Lake Como: the Bolide took the Design Award, alongside the Type 57S's Best of Show and the Type 59's FIVA Trophy.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-reveals-b03-edition-with-champagne-carbon-inspired-by-bolide" target="_blank" rel="noopener">
-          <span class="d">2022-07-07</span><span class="t">Bugatti reveals ƎB.03 Edition, inspired by Bolide</span>
-          <span class="sum">A bespoke dual-tone carbon fiber bottle holding a vintage Blanc de Blancs — the perfect pairing for the most extreme Bugatti ever.</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-      <div class="argroup">
-        <h3>ENGINEERING & TESTING · 2023</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-enters-next-phase-of-testing" target="_blank" rel="noopener">
-          <span class="d">2023-04-20</span><span class="t">Bolide enters next phase of testing</span>
-          <span class="sum">The 2020 thought experiment becomes a drivable prototype entering high-intensity development testing — after countless simulated laps, it was the asphalt's turn.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-undertakes-extreme-track-testing-to-perfect-high-performance-aerodynamics" target="_blank" rel="noopener">
-          <span class="d">2023-06-01</span><span class="t">Bolide undertakes extreme track testing for aerodynamics</span>
-          <span class="sum">First test data published: up to 2.5 G lateral, nearly three tons of downforce — the front splitter, air curtains, winglets, and the physical-mirror decision in detail.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-engineered-to-the-highest-safety-standards" target="_blank" rel="noopener">
-          <span class="d">2023-09-11</span><span class="t">Bolide: engineered to the highest safety standards</span>
-          <span class="sum">The monocoque developed to FIA LMH/LMDh requirements — the same standards as Le Mans prototypes — in the world's highest-performing carbon material.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-a-cockpit-designed-for-exhilarating-experiences-on-track" target="_blank" rel="noopener">
-          <span class="d">2023-11-22</span><span class="t">A cockpit designed for exhilarating experiences on track</span>
-          <span class="sum">The LMP1-inspired cabin, the X-theme stitching, every detail built for the driver.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/the-new-lego-technic-bugatti-bolide" target="_blank" rel="noopener">
-          <span class="d">2023-01-02</span><span class="t">The new LEGO® Technic™ Bugatti Bolide</span>
-          <span class="sum">905 pieces, moving W16 pistons, scissor doors and low-profile tires — the second car in the LEGO Group partnership.</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-      <div class="argroup">
-        <h3>DEBUTS · 2023</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-makes-spectacular-public-debut-at-24-hours-of-le-mans-centenary" target="_blank" rel="noopener">
-          <span class="d">2023-06-12</span><span class="t">Bolide makes its spectacular public debut at the Le Mans centenary</span>
-          <span class="sum">Andy Wallace drove the Bolide in its first public dynamic appearance — on the centenary of the 24 Hours.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-thrills-spectators-at-goodwood-festival-of-speed-2023" target="_blank" rel="noopener">
-          <span class="d">2023-07-14</span><span class="t">Bolide thrills spectators at Goodwood Festival of Speed 2023</span>
-          <span class="sum">The hillclimb debut: spectators heard the W16 track machine for the first time.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bolide-customers-find-inspiration-in-bugattis-racing-history" target="_blank" rel="noopener">
-          <span class="d">2023-07-06</span><span class="t">Bolide customers find inspiration in Bugatti's racing history</span>
-          <span class="sum">Customer commissions drawn from a century of racing — Type 35-era liveries and numbers reborn in carbon fiber.</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-      <div class="argroup">
-        <h3>OWNERS & TRACKS · 2024</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/breaking-boundaries-with-the-bugatti-bolide-1" target="_blank" rel="noopener">
-          <span class="d">2024-02-22</span><span class="t">Breaking boundaries with the Bolide</span>
-          <span class="sum">The Brembo collaboration in detail: carbon-carbon brakes and the largest caliper ever fitted to a racing car. CTO Scervo: "Not only meets, but surpasses the extraordinary demands of the Bolide."</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/racing-legend-andy-wallace-and-bugatti-bolide-when-destinies-cross-paths" target="_blank" rel="noopener">
-          <span class="d">2024-03-21</span><span class="t">Racing legend Andy Wallace and the Bolide</span>
-          <span class="sum">Triple Crown winner and Bugatti Pilote Officiel Andy Wallace meets the marque's most extreme machine.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/redefining-the-performance-experience-with-the-bugatti-bolide-1" target="_blank" rel="noopener">
-          <span class="d">2024-04-11</span><span class="t">Redefining the performance experience with the Bolide</span>
-          <span class="sum">The complete ownership experience — from delivery and training to track days — redefining what owning a track machine means.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/a-historic-meeting-of-bugatti-trailblazers-on-the-track" target="_blank" rel="noopener">
-          <span class="d">2024-08-16</span><span class="t">Type 35 and the 100-year anniversary Bolide</span>
-          <span class="sum">At Monterey Car Week, the centenary-edition Bolide made its debut at Laguna Seca alongside the Type 35 — a century after its first race.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/goodwood-festival-of-speed-2024-a-showcase-of-bugatti-innovation-and-heritage" target="_blank" rel="noopener">
-          <span class="d">2024-07-15</span><span class="t">Goodwood Festival of Speed 2024</span>
-          <span class="sum">The Tourbillon's public debut, and the W16 Mistral and Bolide taking on the famous hillclimb — past and future on the same hill.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bolide-mistral-tourbillon-shaping-the-future-of-bugatti-aftersales-in-2024" target="_blank" rel="noopener">
-          <span class="d">2024-07-02</span><span class="t">Shaping the future of Bugatti Aftersales in 2024</span>
-          <span class="sum">The service blueprint for the new generation of Bugatti hyper sports cars.</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-      <div class="argroup">
-        <h3>DELIVERY & EXPERIENCE · 2025 — 2026</h3>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/bugatti-bolide-a-customers-first-track-experience" target="_blank" rel="noopener">
-          <span class="d">2025-01-07</span><span class="t">A customer's first track experience at COTA</span>
-          <span class="sum">The first owner to take his Bolide to a circuit — a Christmas gift to himself, in the rain. His verdict: "Incredibly easy to handle. The surge of power is incomparable."</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/embracing-a-new-era" target="_blank" rel="noopener">
-          <span class="d">2025-01-10</span><span class="t">Embracing a new era: Bugatti from 2024 to 2025</span>
-          <span class="sum">The year of the Type 35 centenary and first Bolide deliveries — as the W16 chapter begins its farewell with the Bolide and W16 Mistral.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/feeling-the-track-bugatti-bolide-owners-take-on-circuit-paul-ricard" target="_blank" rel="noopener">
-          <span class="d">2025-03-10</span><span class="t">Feeling The Track: Bolide owners take on Circuit Paul Ricard</span>
-          <span class="sum">The inaugural customer drive event at Paul Ricard — multiple Bolides unleashed together — and the introduction of Équipe Pur Sang.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/the-meticulous-final-bugatti-bolide-shakedown" target="_blank" rel="noopener">
-          <span class="d">2025-03-18</span><span class="t">Perfection at extremes: the meticulous final Bolide shakedown</span>
-          <span class="sum">Every Bolide completes a final inspection and circuit testing program at Mirecourt before meeting its owner. Quality Director Philippe Grand: "There was no benchmark for this car. So we developed our own."</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/the-specialists-that-bring-the-bolide-experience-to-life" target="_blank" rel="noopener">
-          <span class="d">2025-07-16</span><span class="t">The specialists that bring the Bolide experience to life</span>
-          <span class="sum">A worldwide network of Certified Bolide Centers: from pre-delivery inspection to annual servicing, technicians trained to exacting motorsport standards.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/the-final-bolide-a-vision-becomes-legacy" target="_blank" rel="noopener">
-          <span class="d">2025-11-27</span><span class="t">The final Bolide: a vision becomes legacy</span>
-          <span class="sum">The last Bolide completed at the Molsheim Atelier. CTO Scervo and President Piochon look back on four years of a car built for gentlemen and professionals alike.</span>
-          <span class="g">Read full</span>
-        </a>
-
-        <a class="ar-item" href="https://newsroom.bugatti.com/press-releases/feeling-the-track-bugatti-bolide" target="_blank" rel="noopener">
-          <span class="d">2026-03-06</span><span class="t">Feeling the Track: Bolide owners master the sun-soaked asphalt in Miami</span>
-          <span class="sum">At first light in South Florida, eight Bolides lined up in the pit lane of the Miami International Autodrome — the largest owner event to date, with professional coaching and motorsport-level technical support.</span>
-          <span class="g">Read full</span>
-        </a>
-      </div>
-
-    </div>
+      <figcaption class="figure__cap">
+        <span class="no">18</span>
+        <span class="en">French Racing Blue with Nocturne accents — a testament to Bugatti's racing history.</span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
@@ -991,8 +749,8 @@
 <footer class="footer">
   <div class="footer__brand">BOLIDE<span class="sub">LE PUR SANG DES AUTOMOBILES</span></div>
   <div class="footer__meta">
-    IMAGES: <a href="https://newsroom.bugatti.com" target="_blank" rel="noopener">BUGATTI NEWSROOM</a> · <a href="https://www.bugatti.com/en/models/bolide" target="_blank" rel="noopener">BUGATTI.COM</a><br>
-    IMAGES & QUOTES © BUGATTI AUTOMOBILES S.A.S.<br>
+    Images: <a href="https://newsroom.bugatti.com" target="_blank" rel="noopener">BUGATTI NEWSROOM</a> · <a href="https://www.bugatti.com/en/models/bolide" target="_blank" rel="noopener">BUGATTI.COM</a><br>
+    Images and quotations © BUGATTI AUTOMOBILES S.A.S.<br>
     MOLSHEIM — 2020 → 2026
   </div>
 </footer>
