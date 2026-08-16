@@ -14,20 +14,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0b0d'/%3E%3Ctext x='50' y='68' font-size='62' text-anchor='middle' fill='%23f4f2ee' font-family='serif'%3EB%3C/text%3E%3C/svg%3E">
-<script>
-/* 海外访客自动进入英文版；用户主动选择过中文则不跳转 */
-(function () {
-  if (localStorage.getItem('bolide-lang') === 'zh') return;
-  fetch('https://ipapi.co/json/')
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      if (d && d.country_code && d.country_code !== 'CN') {
-        localStorage.setItem('bolide-lang', 'en');
-        location.replace('en.html');
-      }
-    }).catch(function () {});
-})();
-</script>
+<script src="js/lang-detect.js"></script>
 </head>
 <body>
 
@@ -78,6 +65,18 @@
   </div>
   
 </section>
+
+<!-- ============ HYPERCAR 门户跳转 ============ -->
+<a class="portal-bar" href="https://www.hypercar.site" target="_blank" rel="noopener" aria-label="HYPERCAR.SITE 门户">
+  <span class="portal-bar__rule" aria-hidden="true"></span>
+  <span class="portal-bar__badge" aria-hidden="true">H</span>
+  <span class="portal-bar__name">HYPERCAR.SITE</span>
+  <span class="portal-bar__sep" aria-hidden="true"></span>
+  <span class="portal-bar__text">超跑传奇集合 · 前往门户</span>
+  <i class="portal-bar__arrow" aria-hidden="true">→</i>
+  <span class="portal-bar__rule portal-bar__rule--r" aria-hidden="true"></span>
+</a>
+
 
 <!-- ============ 限量声明 ============ -->
 
