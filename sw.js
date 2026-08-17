@@ -1,11 +1,12 @@
 ﻿/* BOLIDE — Service Worker：页面级缓存（媒体资源量大，仅缓存骨架） */
-const CACHE = 'bolide-v6';
+const CACHE = 'bolide-v8';
 const SHELL = [
   './',
   './index.html',
   './en.html',
   './css/style.css',
   './js/main.js',
+  './js/lang-detect.js',
   './manifest.json',
   './assets/hero.webp',
   './assets/web/hero.mp4',
