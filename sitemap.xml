@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bolide.hypercar.site/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bolide.hypercar.site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bolide.hypercar.site/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bolide.hypercar.site/"/>
+  </url>
+  <url>
+    <loc>https://bolide.hypercar.site/en.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://bolide.hypercar.site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bolide.hypercar.site/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bolide.hypercar.site/"/>
+  </url>
+</urlset>
